@@ -1,22 +1,7 @@
-/* https://colorhunt.co/palette/226607 */
-
-body {
-    background-color: #e6e6e6;
-    padding: 3vh 0 6vh;
-}
-
-header,
-main {
-    margin: 0 auto;
-    max-width: 1280px;
-    width: 95%;
-}
-
 header {
-    align-items: center;
-    display: flex;
+    background-color: var(--header-background);
+    color: var(--header-text);
     margin-bottom: 2em;
-    padding: 0 4em;
 }
 
 header nav {
@@ -60,16 +45,19 @@ header nav li:first-child img {
 }
 
 header nav a {
-    color: #0f0f0f;
+    color: inherit;
 }
 
 main {
     background-color: white;
     border-top-left-radius: 100px;
     border-bottom-right-radius: 100px;
-    box-shadow: 0 32px 32px 16px rgba(0,0,0,0.1);
+    /*box-shadow: 0 32px 32px 16px rgba(0,0,0,0.1);*/
+    margin: 0 auto;
+    max-width: 1280px;
     padding: 4em;
     padding: clamp(1em, 6vw, 4.5em);
+    width: 92%;
 }
 
 article {
@@ -110,9 +98,9 @@ h3 {
 
 #samples li::before {
     align-items: center;
-    background: #c5a880;
+    background-color: var(--counter-background);
     border-radius: 50%;
-    color: #532e1c;
+    color: var(--counter-text);
     content: counter(my-awesome-counter);
     display: flex;
     flex: none;

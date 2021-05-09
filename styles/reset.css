@@ -2,6 +2,38 @@
     box-sizing: inherit;
 }
 
+.theme--1 {
+    /* https://colorhunt.co/palette/206782 */
+
+    --color-1: #fff0f0;
+    --color-2: #ebd4d4;
+    --color-3: #835858;
+    --color-4: #463333;
+
+    --body-background: var(--color-2);
+    --body-text: var(--color-4);
+    --header-background: var(--color-3);
+    --header-text: var(--color-1);
+    --counter-background: var(--color-3);
+    --counter-text: var(--color-1);
+}
+
+.theme--2 {
+    /* https://colorhunt.co/palette/196180 */
+
+    --color-1: #ebecf1;
+    --color-2: #206a5d;
+    --color-3: #1f4068;
+    --color-4: #1b1c25;
+
+    --body-background: var(--color-1);
+    --body-text: var(--color-4);
+    --header-background: var(--color-3);
+    --header-text: var(--color-1);
+    --counter-background: var(--color-2);
+    --counter-text: var(--color-1);
+}
+
 html {
     box-sizing: border-box;
     font-size: 16px;
@@ -10,7 +42,8 @@ html {
 }
 
 body {
-    color: #0f0f0f;
+    background-color: var(--body-background);
+    color: var(--body-text);
     -webkit-font-smoothing: antialiased;
     font-family: Lato, Helvetica, Arial, sans-serif;
     font-size-adjust: none;
@@ -36,6 +69,13 @@ h4, h5, h6, p {
 
 p {
     line-height: 1.5;
+}
+
+a {
+    border-bottom: 2px solid currentColor;
+    display: inline-block;
+    padding-bottom: 0.25em;
+    text-decoration: none;
 }
 
 .a11y-screen-reader-only {
