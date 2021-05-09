@@ -1,0 +1,50 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    color: #0f0f0f;
+    -webkit-font-smoothing: antialiased;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+    font-size-adjust: none;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    width: 100%;
+}
+
+h1, h2 {
+    font-family: "Lexend Deca", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3,
+h4, h5, h6, p {
+    font-weight: 400;
+    margin: 0;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.a11y-screen-reader-only {
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(1px, 1px, 1px, 1px);
+    color: transparent;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
