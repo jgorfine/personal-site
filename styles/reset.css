@@ -57,7 +57,7 @@ body {
     width: 100%;
 }
 
-h1, h2 {
+h2, h3, h4 {
     font-family: "Lexend Deca", Helvetica, Arial, sans-serif;
 }
 
@@ -72,10 +72,16 @@ p {
 }
 
 a {
-    border-bottom: 2px solid currentColor;
+    border-bottom-color: transparent;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
     display: inline-block;
     padding-bottom: 0.25em;
     text-decoration: none;
+}
+
+a[aria-current] {
+    border-bottom-color: currentColor;
 }
 
 .a11y-screen-reader-only {

@@ -1,14 +1,56 @@
+.container {
+    margin: 0 auto;
+    width: 92%;
+}
+
+.container--large {
+    max-width: 1485px;
+}
+
+.container--medium {
+    max-width: 1280px;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
 header {
     background-color: var(--header-background);
     color: var(--header-text);
-    margin-bottom: 2em;
+    margin-bottom: 6vh;
+    padding: 0.5em 0;
 }
 
-header nav {
+header .container {
+    align-items: center;
+    display: flex;
+}
+
+header .foo {
+    border-radius: 50%;
+    display: block;
+    flex: none;
+    height: 100px;
+    margin-right: 1em;
+    overflow: hidden;
+    position: relative;
+    width: 100px;
+}
+
+header .foo img {
+    /*clip-path: circle(50% at 50% 50%);*/
+    /*object-fit: cover;*/
+    /*width: 200px;*/
+    left: -110px;
+    position: absolute;
+    top: -11px;
+    width: 320px;
+}
+
+nav {
     font-size: 22px;
 }
 
-header nav ol {
+nav ol {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -19,45 +61,29 @@ header nav ol {
 }
 
 @media only screen and (min-width: 700px) {
-    header nav ol {
+    nav ol {
         align-items: center;
         flex-direction: row;
     }
 }
 
-header nav li:first-child a {
-    border-radius: 50%;
-    display: block;
-    height: 100px;
-    overflow: hidden;
-    position: relative;
-    width: 100px;
-}
-
-header nav li:first-child img {
-    /*clip-path: circle(50% at 50% 50%);*/
-    /*object-fit: cover;*/
-    /*width: 200px;*/
-    left: -110px;
-    position: absolute;
-    top: -11px;
-    width: 320px;
-}
-
-header nav a {
+nav a {
     color: inherit;
 }
 
 main {
+    margin: 3vh 0 6vh;
+}
+
+main .container {
     background-color: white;
     border-top-left-radius: 100px;
     border-bottom-right-radius: 100px;
-    /*box-shadow: 0 32px 32px 16px rgba(0,0,0,0.1);*/
-    margin: 0 auto;
-    max-width: 1280px;
-    padding: 4em;
-    padding: clamp(1em, 6vw, 4.5em);
-    width: 92%;
+    box-shadow: 0 32px 32px 16px rgba(0,0,0,0.1);
+    /*padding: 4em;*/
+    /*padding: clamp(1em, 6vw, 4.5em);*/
+    padding-bottom: 4em;
+    padding-top: 4em;
 }
 
 article {
@@ -65,21 +91,28 @@ article {
 }
 
 h1 {
+    font-size: 24px;
+}
+
+h2 {
     font-size: 60px;
     margin-bottom: 0.5em;
 }
 
-h1 + p {
+h2 + p {
     font-size: 28px;
-}
-
-h2 {
-    font-size: 42px;
 }
 
 h3 {
-    font-size: 28px;
+    font-size: 42px;
+}
+
+h4 {
+    color: var(--counter-background);
+    font-size: 32px;
+    line-height: 1.1;
     margin-bottom: 1em;
+    /*margin-top: 0.2em;*/
 }
 
 #samples ol {
@@ -105,7 +138,7 @@ h3 {
     display: flex;
     flex: none;
     font-family: "Lexend Deca", Helvetica, Arial, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     height: 2em;
     justify-content: center;
     line-height: 1;
