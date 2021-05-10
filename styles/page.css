@@ -78,7 +78,9 @@ h1 > span:last-child {
 }
 
 nav {
-    font-size: 22px;
+    font-family: "Lexend", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 nav ol {
@@ -122,8 +124,7 @@ article {
 }
 
 h2 {
-    /*font-family: "Nixie One", serif;*/
-    font-family: "Lexend", Helvetica, Arial, sans-serif;
+    font-family: "Nixie One", serif;
     font-size: 60px;
     font-weight: 100;
     margin-bottom: 0.5em;
