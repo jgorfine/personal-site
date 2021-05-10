@@ -37,24 +37,38 @@
     <meta name="twitter:site" content="">
     <!-- FONTS -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500&family=Lato&family=Nixie+One&display=swap"
-          rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Lato&family=Nixie+One&display=swap"
+            rel="stylesheet">
     <!-- STYLES -->
     <link href="styles/reset.css" rel="stylesheet">
     <link href="styles/page.css" rel="stylesheet">
 </head>
-<body class="theme--4" itemscope itemtype="https://schema.org/WebPage">
+<body class="theme--3" itemscope itemtype="https://schema.org/WebPage">
     <meta itemprop="datePublished" content="2021-05-09">
     <meta itemprop="dateModified" content="2021-05-09">
     <meta itemprop="lastReviewed" content="2021-05-09">
     <header role="banner">
-        <div class="container container--large">
-            <div class="foo">
-                <img src="images/headshot.jpg" alt="Photo of Jen, smiling." />
-            </div>
+        <div class="container">
             <h1>
-                <span>Jennifer Gorfine</span>
-                <span>UI Engineer & Web Accessibility Specialist</span>
+                <svg aria-labelledby="fancy" viewBox="74 88 430 205" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title id="fancy">Jennifer Gorfine, UI Engineering & Web Accessibility</title>
+                    <defs>
+                        <path id="topSemiCircle" d="M 120, 200a 175,175 0 1,1 350,0" />
+                        <path id="bottomSemiCircle" d="M 100, 200a 175,175 0 1,0 390,0" />
+                        <clipPath id="innerCircle">
+                            <circle cx="296" cy="200" r="160" />
+                        </clipPath>
+                    </defs>
+                    <text class="thing1" dy="1" font-size="65" textLength="450">
+                        <textPath startOffset="10" textLength="450" href="#topSemiCircle">Jennifer Gorfine</textPath>
+                    </text>
+                    <image x="23" y="28" href="https://assets.codepen.io/352907/headshot.jpg" clip-path="url(#innerCircle)" />
+                    <text class="thing2" dy="1" font-size="30" textLength="505">
+                        <textPath startOffset="113" textLength="505" href="#bottomSemiCircle">UI Engineering & Web Accessibility</textPath>
+                    </text>
+                </svg>
             </h1>
         </div>
     </header>
@@ -71,7 +85,7 @@
     <main role="main">
         <div class="container container--medium">
             <h2>Code</h2>
-            <p>Biscuit cotton candy pudding. Chocolate bar dragée candy donut cheesecake sesame snaps.</p>
+            <p>I have 8 years of professional experience.</p>
     <!--        <article id="languages" aria-labelledby="">-->
     <!--            <h2>Languages & Proficiencies</h2>-->
     <!--        </article>-->

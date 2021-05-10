@@ -2,6 +2,11 @@
     box-sizing: inherit;
 }
 
+:root {
+    --font-stack-primary: Lato, Helvetica, Arial, sans-serif;
+    --font-stack-secondary: "Nixie One", serif;
+}
+
 .theme--1 {
     /* https://colorhunt.co/palette/206782 */
     --color-1: #fff0f0;
@@ -73,7 +78,8 @@ body {
     background-color: var(--body-background);
     color: var(--body-text);
     -webkit-font-smoothing: antialiased;
-    font-family: Lato, Helvetica, Arial, sans-serif;
+    /*font-family: Lato, Helvetica, Arial, sans-serif;*/
+    font-family: var(--font-stack-primary);
     font-size-adjust: none;
     font-weight: 400;
     line-height: 1;
@@ -85,8 +91,8 @@ body {
     width: 100%;
 }
 
-h2, h3, h4 {
-    font-family: "Lexend Deca", Helvetica, Arial, sans-serif;
+h2, h3 {
+    font-family: var(--font-stack-secondary);
 }
 
 h1, h2, h3,
@@ -100,16 +106,13 @@ p {
 }
 
 a {
-    border-bottom-color: transparent;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
     display: inline-block;
     padding-bottom: 0.25em;
     text-decoration: none;
 }
 
 a[aria-current] {
-    border-bottom-color: currentColor;
+    color: var(--color-1);
 }
 
 .a11y-screen-reader-only {
