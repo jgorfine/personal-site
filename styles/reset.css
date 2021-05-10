@@ -4,7 +4,6 @@
 
 .theme--1 {
     /* https://colorhunt.co/palette/206782 */
-
     --color-1: #fff0f0;
     --color-2: #ebd4d4;
     --color-3: #835858;
@@ -20,7 +19,6 @@
 
 .theme--2 {
     /* https://colorhunt.co/palette/196180 */
-
     --color-1: #ebecf1;
     --color-2: #206a5d;
     --color-3: #1f4068;
@@ -32,6 +30,36 @@
     --header-text: var(--color-1);
     --counter-background: var(--color-2);
     --counter-text: var(--color-1);
+}
+
+.theme--3 {
+    /* https://colorhunt.co/palette/196152 */
+    --color-1: #6f4a8e;
+    --color-2: #221f3b;
+    --color-3: #050505;
+    --color-4: #ebebeb;
+
+    --body-background: var(--color-4);
+    --body-text: var(--color-3);
+    --header-background: var(--color-2);
+    --header-text: #fff;
+    --counter-background: var(--color-1);
+    --counter-text: #fff;
+}
+
+.theme--4 {
+    /* https://colorhunt.co/palette/264715 */
+    --color-1: #eeebdd;
+    --color-2: #810000;
+    --color-3: #630000;
+    --color-4: #1b1717;
+
+    --body-background: var(--color-1);
+    --body-text: var(--color-4);
+    --header-background: var(--color-3);
+    --header-text: #fff;
+    --counter-background: var(--color-2);
+    --counter-text: #fff;
 }
 
 html {
