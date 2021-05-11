@@ -15,82 +15,6 @@ UTILITIES
     width: 1px;
 }
 
-.theme--1 {
-    /* https://colorhunt.co/palette/206782 */
-    --color-1: #fff0f0;
-    --color-2: #ebd4d4;
-    --color-3: #835858;
-    --color-4: #463333;
-
-    --body-background-color: #fff;
-    --body-text-color: var(--color-4);
-    --header-background-color: var(--color-3);
-    --header-text-color: var(--color-1);
-    --counter-background-color: var(--color-3);
-    --counter-text-color: var(--color-1);
-}
-
-.theme--2 {
-    /* https://colorhunt.co/palette/196180 */
-    --color-1: #ebecf1;
-    --color-2: #206a5d;
-    --color-3: #1f4068;
-    --color-4: #1b1c25;
-
-    --body-background-color: #fff;
-    --body-text-color: var(--color-4);
-    --header-background-color: var(--color-3);
-    --header-text-color: var(--color-1);
-    --counter-background-color: var(--color-2);
-    --counter-text-color: var(--color-1);
-}
-
-.theme--3 {
-    /* https://colorhunt.co/palette/196152 */
-    --color-1: #6f4a8e;
-    --color-2: #221f3b;
-    --color-3: #050505;
-    --color-4: #ebebeb;
-
-    --body-background-color: #fff;
-    --body-text-color: var(--color-3);
-    --header-background-color: var(--color-2);
-    --header-text-color: #fff;
-    --counter-background-color: var(--color-1);
-    --counter-text-color: #fff;
-}
-
-.theme--4 {
-    /* https://colorhunt.co/palette/202087 */
-    --color-1: #f6f4e6;
-    --color-2: #fddb3a;
-    --color-3: #52575d;
-    --color-4: #41444b;
-
-    --body-background-color: #fff;
-    --body-text-color: var(--color-4);
-    --header-background-color: var(--color-3);
-    --header-text-color: var(--color-1);
-    --counter-background-color: var(--color-2);
-    --counter-text-color: var(--color-3);
-}
-
-.theme--5 {
-    /* https://colorhunt.co/palette/145355 */
-    --color-1: #33313b;
-    --color-2: #4592af;
-    --color-3: #e3c4a8;
-    --color-4: #f6f5f5;
-
-    --body-background-color: #fff;
-    --body-text-color: var(--color-1);
-    --header-background-color: var(--color-1);
-    --header-text-color: var(--color-3);
-    --counter-background-color: var(--color-2);
-    --counter-text-color: var(--color-4);
-}
-
-/* https://colorhunt.co/palette/139181 */
 
 
 /*
@@ -101,11 +25,6 @@ RESET
 
 *, *:before, *:after {
     box-sizing: inherit;
-}
-
-:root {
-    --font-stack-primary: Lato, Helvetica, Arial, sans-serif;
-    --font-stack-secondary: "Nixie One", serif;
 }
 
 html {
@@ -136,6 +55,34 @@ figure {
 
 /*
 ---------------------------------------------
+THEME
+---------------------------------------------
+*/
+
+:root {
+    --font-stack-primary: Lato, Helvetica, Arial, sans-serif;
+    --font-stack-secondary: "Nixie One", serif;
+
+    /* https://colorhunt.co/palette/196180 */
+    --theme-color-1: #ebecf1;
+    --theme-color-2: #206a5d;
+    --theme-color-3: #1f4068;
+    --theme-color-4: #1b1c25;
+
+    --body-background-color: #fff;
+    --body-text-color: var(--theme-color-4);
+    --header-background-color: var(--theme-color-3);
+    --header-text-color: var(--theme-color-1);
+    --heading-color: var(--theme-color-2);
+    --counter-background-color: var(--theme-color-2);
+    --counter-text-color: var(--theme-color-1);
+    --figcaption-background-color: var(--theme-color-1);
+}
+
+
+
+/*
+---------------------------------------------
 TYPOGRAPHY
 ---------------------------------------------
 */
@@ -147,10 +94,11 @@ h4, h5, h6, p {
 }
 
 h2 {
+    color: var(--heading-color);
     font-family: var(--font-stack-secondary);
-    font-size: 50px;
+    font-size: 55px;
     font-weight: 100;
-    margin-bottom: 0.5em;
+    margin-bottom: 36px;
 }
 
 h3 {
@@ -159,12 +107,12 @@ h3 {
 }
 
 p {
-    line-height: 1.5;
+    /*line-height: 1.5;*/
 }
 
 p,
 dl {
-    font-size: 22px;
+    font-size: 24px;
 }
 
 p + p {
@@ -182,7 +130,6 @@ LAYOUT
 body {
     background-color: var(--body-background-color);
     color: var(--body-text-color);
-    /*font-family: Lato, Helvetica, Arial, sans-serif;*/
     font-family: var(--font-stack-primary);
 }
 
@@ -190,8 +137,8 @@ body {
     body {
         display: grid;
         grid-template-areas:
-            "header nav nav nav"
-            "header main main main";
+            "header nav nav nav nav nav nav"
+            "header main main main main main main";
     }
 }
 
@@ -230,19 +177,23 @@ header {
     }
 }
 
+header h1 {
+    font-size: 1em;
+}
+
+/*@media only screen and (min-width: 1200px) {*/
+/*    header h1 {*/
+/*        font-size: 1em;*/
+/*    }*/
+/*}*/
+
 header svg {
     display: block;
     fill: currentColor;
-    font-size: 0.875em;
+    font-size: 1em;
     height: 20em /*320px*/;
     margin: 0 auto;
     width: 20em /*320px*/;
-}
-
-@media only screen and (min-width: 1200px) {
-    header svg {
-        font-size: 1em;
-    }
 }
 
 .thing1 {
@@ -263,36 +214,22 @@ MAIN
 
 main {
     grid-area: main;
-    margin: 3vh 0 2rem;
+    margin: 3em 0 6em;
 }
-
-main .container {
-    /*background-color: white;*/
-    /*border-top-left-radius: 100px;*/
-    /*border-bottom-right-radius: 100px;*/
-    /*box-shadow: 0 24px 24px 16px rgba(0,0,0,0.1);*/
-    /*padding: 4em;*/
-    /*padding: clamp(1em, 6vw, 4.5em);*/
-    /*margin: 0 auto;*/
-    /*max-width: 1100px;*/
-    /*padding: 4em;*/
-    /*padding: clamp(1em, 10vw, 4em);*/
-}
-
-/*@media only screen and (min-width: 1200px) {*/
-/*    main .container {*/
-/*        margin: 0 auto 0 5%;*/
-/*    }*/
-/*}*/
 
 article + article {
     margin-top: 90px;
 }
 
 article .container {
-    margin: 0 auto;
-    max-width: 1100px;
-    width: 92%;
+    max-width: 1280px;
+}
+
+@media only screen and (min-width: 1200px) {
+    article .container {
+        margin: 0 auto 0 6%;
+        padding-right: 6%;
+    }
 }
 
 #portfolio ol {
@@ -307,7 +244,11 @@ article .container {
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
-    margin-top: 80px;
+    /*margin-top: 80px;*/
+}
+
+#portfolio li + li {
+    margin-top: 72px;
 }
 
 #portfolio li::before {
@@ -318,7 +259,7 @@ article .container {
     content: counter(custom-counter);
     display: flex;
     flex: none;
-    font-size: 20px;
+    font-size: 26px;
     height: 2em;
     justify-content: center;
     line-height: 2;
@@ -330,8 +271,9 @@ article .container {
     flex: 1 1 600px;
 }
 
-#portfolio .hey {
+#portfolio .portfolio__demo {
     display: block;
+    margin-top: 2em;
 }
 
 #portfolio img,
@@ -341,12 +283,8 @@ article .container {
     width: 100%;
 }
 
-#portfolio figure {
-    margin-top: 1.5em;
-}
-
 #portfolio figcaption {
-    background-color: var(--color-1);
+    background-color: var(--figcaption-background-color);
     font-size: 20px;
     padding: 1em;
 }
@@ -355,8 +293,12 @@ dl {
     margin: 0;
 }
 
+dl > div {
+    line-height: 1.3;
+}
+
 dl > div + div {
-    margin-top: 0.5em;
+    margin-top: 0.75em;
 }
 
 dt,
