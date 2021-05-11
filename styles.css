@@ -74,6 +74,7 @@ THEME
     --header-background-color: var(--theme-color-3);
     --header-text-color: var(--theme-color-1);
     --heading-color: var(--theme-color-2);
+    --nav-background-color: var(--theme-color-2);
     --counter-background-color: var(--theme-color-2);
     --counter-text-color: var(--theme-color-1);
     --figcaption-background-color: var(--theme-color-1);
@@ -117,6 +118,46 @@ dl {
 
 p + p {
     margin-top: 1em;
+}
+
+.button {
+    align-items: baseline;
+    background-color: var(--theme-color-2);
+    border-radius: 4px;
+    box-shadow: 0 3px 0 0 black;
+    color: var(--theme-color-1);
+    display: inline-flex;
+    font-size: inherit;
+    line-height: 1.4;
+    padding: 0.5em 1.125em;
+    position: relative;
+    text-decoration: none;
+}
+
+.button:hover {
+    box-shadow: 0 2px 0 0 black;
+    top: 1px;
+}
+
+.button:active {
+    box-shadow: 0 0 0 0 transparent;
+    top: 3px;
+}
+
+.link--external {
+    align-items: baseline;
+    color: inherit;
+    display: inline-flex;
+    font-size: inherit;
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+.link--external svg {
+    fill: currentColor;
+    height: 0.875em;
+    margin-left: 0.25em;
+    width: 0.875em;
 }
 
 
@@ -202,6 +243,54 @@ header svg {
 
 header h1 {
     font-size: 1em;
+}
+
+header nav {
+    /*background-color: var(--nav-background-color);*/
+    font-size: 20px;
+    margin: 3em auto 0;
+    padding: 1em;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*header nav li {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    gap: 2em;*/
+/*}*/
+
+header nav li + li {
+    margin-top: 1em;
+}
+
+header nav .whoa {
+    align-items: center;
+    background-color: var(--counter-background-color);
+    border-radius: 50%;
+    color: var(--counter-text-color);
+    content: counter(custom-counter);
+    display: flex;
+    flex: none;
+    font-size: 26px;
+    height: 1.5em;
+    justify-content: center;
+    line-height: 2;
+    outline: 1px solid transparent;
+    width: 1.5em;
+}
+
+header nav .whoa svg {
+    height: 0.75em;
+    width: 0.75em;
+}
+
+header nav svg {
+    fill: currentColor;
 }
 
 
