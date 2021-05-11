@@ -13,7 +13,7 @@
     <meta name="googlebot" content="index, follow">
     <!-- ~Social Share -->
     <!-- ~-title -->
-    <title>Home, Jennifer Gorfine</title>
+    <title>Jennifer Gorfine</title>
     <meta itemprop="name" content="Jennifer Gorfine">
     <!-- ~-description -->
     <meta name="description" content="">
@@ -35,39 +35,120 @@
     <meta property="fb:app_id" content="">
     <meta name="twitter:creator" content="">
     <meta name="twitter:site" content="">
+    <!-- FONTS -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nixie+One&display=swap" rel="stylesheet">
     <!-- STYLES -->
-    <link href="styles/reset.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body itemscope itemtype="https://schema.org/WebPage">
-    <meta itemprop="datePublished" content="2021-05-09">
-    <meta itemprop="dateModified" content="2021-05-09">
-    <meta itemprop="lastReviewed" content="2021-05-09">
+<body class="theme--2" itemscope itemtype="https://schema.org/WebPage">
+    <meta itemprop="datePublished" content="2021-05-10">
+    <meta itemprop="dateModified" content="2021-05-10">
+    <meta itemprop="lastReviewed" content="2021-05-10">
     <header role="banner">
-        <h1>Jennifer Gorfine, UI Engineer & Web Accessibility Specialist</h1>
+        <div class="container">
+            <h1>
+                <svg aria-labelledby="fancy" viewBox="74 88 430 205" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title id="fancy">Jennifer Gorfine, UI Engineering & Web Accessibility</title>
+                    <defs>
+                        <path id="topSemiCircle" d="M 120, 200a 175,175 0 1,1 350,0" />
+                        <path id="bottomSemiCircle" d="M 100, 200a 175,175 0 1,0 390,0" />
+                        <clipPath id="innerCircle">
+                            <circle cx="296" cy="200" r="160" />
+                        </clipPath>
+                    </defs>
+                    <text class="thing1" dy="1" font-size="60" textLength="465">
+                        <textPath startOffset="5" textLength="465" href="#topSemiCircle">Jennifer Gorfine</textPath>
+                    </text>
+                    <image x="23" y="28" href="https://assets.codepen.io/352907/headshot.jpg" clip-path="url(#innerCircle)" />
+                    <text class="thing2" dy="1" font-size="30" textLength="505">
+                        <textPath startOffset="113" textLength="505" href="#bottomSemiCircle">UI Engineering & Web Accessibility</textPath>
+                    </text>
+                </svg>
+            </h1>
+        </div>
     </header>
     <main role="main">
-<!--        <article id="screen-reader-testing" aria-labelledby="screen-reader-testing__title">-->
-<!--            <h2 id="screen-reader-testing__title">Screen Reader Testing</h2>-->
-<!--            <p>Everything I code, I test with a screen reader, before releasing.</p>-->
-<!--            <ol>-->
-<!--                <li>-->
-<!--                    <video preload="none" src="videos/fn-actions-entity-page/rotor.mp4" controls></video>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <video preload="none" src="videos/fn-actions-entity-page/read-all.mp4" controls></video>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <video preload="none" src="videos/fn-actions-entity-page/toggle-button.mp4" controls></video>-->
-<!--                </li>-->
-<!--            </ol>-->
-<!--        </article>-->
-<!--        <article id="presentations" aria-labelledby="presentations__title">-->
-<!--            <h2 id="presentations__title">Presentations</h2>-->
-<!--            <p>I love teaching people...</p>-->
-<!--            <ol>-->
-<!--                <li></li>-->
-<!--            </ol>-->
-<!--        </article>-->
+        <article id="about" aria-labelledby="about__title">
+            <div class="container">
+                <h2 id="about__title">About</h2>
+                <p>Hi there! I'm Jen. I'm a frontend engineer & web accessibility specialist with 8 years of professional experience. My
+                favorite coding language is CSS.</p>
+                <p>I love collaborating with designers to come up with solutions to user needs, and then translating those solutions into
+                delightful, pixel-perfect, and inclusive experiences, in code.</p>
+            </div>
+        </article>
+        <article id="portfolio" aria-labelledby="portfolio__title">
+            <div class="container">
+                <h2 id="portfolio__title">Featured Work</h2>
+                <ol>
+                    <li>
+                        <div class="foobar">
+                            <dl>
+                                <div>
+                                    <dt>Project Name:</dt>
+                                    <dd>FiscalNote Entity Page</dd>
+                                </div>
+                                <div>
+                                    <dt>Date:</dt>
+                                    <dd><time datetime="2021-04">April 2021</time></dd>
+                                </div>
+                                <div>
+                                    <dt>Stack:</dt>
+                                    <dd>HTML, CSS, JavaScript, Stimulus.js, Ruby on Rails, ViewComponent</dd>
+                                </div>
+                            </dl>
+                            <figure class="hey" aria-label="">
+                                <video src="videos/fn-actions-entity-page/read-all.mp4" controls></video>
+                                <figcaption>&ldquo;Read All&rdquo; on VoiceOver</figcaption>
+                            </figure>
+                            <figure class="hey" aria-label="">
+                                <video preload="none" src="videos/fn-actions-entity-page/rotor.mp4" controls></video>
+                                <figcaption>Navigating via rotor on VoiceOver</figcaption>
+                            </figure>
+                            <figure class="hey" aria-label="">
+                                <video preload="none"src="videos/fn-actions-entity-page/toggle-button.mp4" controls></video>
+                                <figcaption>Testing the toggle button for accessibility on VoiceOver</figcaption>
+                            </figure>
+                            <figure class="hey" aria-label="">
+                                <video preload="none" src="videos/fn-actions-entity-page/responsive-design.mp4" controls></video>
+                                <figcaption>Testing web page responsiveness</figcaption>
+                            </figure>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="foobar">
+                            <dl>
+                                <div>
+                                    <dt>Project Name:</dt>
+                                    <dd>FiscalNote Coronavirus Updates & Resource Center</dd>
+                                </div>
+                                <div>
+                                    <dt>Dates:</dt>
+                                    <dd><time datetime="2020-03">March 2020</time> to <time datetime="2020-08">August 2020</time></dd>
+                                </div>
+                                <div>
+                                    <dt>Stack:</dt>
+                                    <dd>HTML, CSS, JavaScript, Handlebars.js, Vue.js, Highcharts</dd>
+                                </div>
+                            </dl>
+                            <a class="hey" href="https://coronavirus.fiscalnote.com/" tabindex="-1">
+                                <img src="images/fn-covid-site.png" alt="A screenshot of the FiscalNote Coronavirus Updates & Resource Center homepage" />
+                            </a>
+                            <a href="https://coronavirus.fiscalnote.com/">
+                                <span>See it live</span>
+    <!--                                <svg class="external-link-icon" aria-labelledby="fizzbuzz" viewBox="0 0 100 125" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">-->
+    <!--                                    <title id="fizzbuzz">(opens an external site)</title>-->
+    <!--                                    <path d="M90.474,5.04H61.789c-2.3,0-4.164,1.864-4.164,4.164s1.864,4.164,4.164,4.164h19.095L40.02,54.232   c-1.627,1.626-1.627,4.263,0,5.889c0.813,0.813,1.879,1.22,2.944,1.22c1.065,0,2.131-0.407,2.944-1.22L86.31,19.718v18.17   c0,2.3,1.864,4.164,4.164,4.164c2.3,0,4.164-1.864,4.164-4.164V9.204C94.638,6.904,92.774,5.04,90.474,5.04z" />-->
+    <!--                                    <path d="M76.071,46.976c-2.3,0-4.164,1.864-4.164,4.164v32.852c0,1.505-1.271,2.776-2.776,2.776h-53.09   c-1.505,0-2.776-1.271-2.776-2.776v-53.09c0-1.505,1.271-2.776,2.776-2.776h32.968c2.3,0,4.164-1.864,4.164-4.164   s-1.864-4.164-4.164-4.164H16.041c-6.123,0-11.104,4.981-11.104,11.104v53.09c0,6.123,4.981,11.104,11.104,11.104h53.09   c6.123,0,11.104-4.981,11.104-11.104V51.14C80.235,48.841,78.371,46.976,76.071,46.976z" />-->
+    <!--                                </svg>-->
+                            </a>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </article>
     </main>
 </body>
 </html>

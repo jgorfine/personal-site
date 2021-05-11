@@ -1,0 +1,370 @@
+/*
+---------------------------------------------
+UTILITIES
+---------------------------------------------
+*/
+
+.a11y-screen-reader-only {
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(1px, 1px, 1px, 1px);
+    color: transparent;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
+
+.theme--1 {
+    /* https://colorhunt.co/palette/206782 */
+    --color-1: #fff0f0;
+    --color-2: #ebd4d4;
+    --color-3: #835858;
+    --color-4: #463333;
+
+    --body-background-color: #fff;
+    --body-text-color: var(--color-4);
+    --header-background-color: var(--color-3);
+    --header-text-color: var(--color-1);
+    --counter-background-color: var(--color-3);
+    --counter-text-color: var(--color-1);
+}
+
+.theme--2 {
+    /* https://colorhunt.co/palette/196180 */
+    --color-1: #ebecf1;
+    --color-2: #206a5d;
+    --color-3: #1f4068;
+    --color-4: #1b1c25;
+
+    --body-background-color: #fff;
+    --body-text-color: var(--color-4);
+    --header-background-color: var(--color-3);
+    --header-text-color: var(--color-1);
+    --counter-background-color: var(--color-2);
+    --counter-text-color: var(--color-1);
+}
+
+.theme--3 {
+    /* https://colorhunt.co/palette/196152 */
+    --color-1: #6f4a8e;
+    --color-2: #221f3b;
+    --color-3: #050505;
+    --color-4: #ebebeb;
+
+    --body-background-color: #fff;
+    --body-text-color: var(--color-3);
+    --header-background-color: var(--color-2);
+    --header-text-color: #fff;
+    --counter-background-color: var(--color-1);
+    --counter-text-color: #fff;
+}
+
+.theme--4 {
+    /* https://colorhunt.co/palette/202087 */
+    --color-1: #f6f4e6;
+    --color-2: #fddb3a;
+    --color-3: #52575d;
+    --color-4: #41444b;
+
+    --body-background-color: #fff;
+    --body-text-color: var(--color-4);
+    --header-background-color: var(--color-3);
+    --header-text-color: var(--color-1);
+    --counter-background-color: var(--color-2);
+    --counter-text-color: var(--color-3);
+}
+
+.theme--5 {
+    /* https://colorhunt.co/palette/145355 */
+    --color-1: #33313b;
+    --color-2: #4592af;
+    --color-3: #e3c4a8;
+    --color-4: #f6f5f5;
+
+    --body-background-color: #fff;
+    --body-text-color: var(--color-1);
+    --header-background-color: var(--color-1);
+    --header-text-color: var(--color-3);
+    --counter-background-color: var(--color-2);
+    --counter-text-color: var(--color-4);
+}
+
+/* https://colorhunt.co/palette/139181 */
+
+
+/*
+---------------------------------------------
+RESET
+---------------------------------------------
+*/
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+:root {
+    --font-stack-primary: Lato, Helvetica, Arial, sans-serif;
+    --font-stack-secondary: "Nixie One", serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    font-size-adjust: none;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    width: 100%;
+}
+
+figure {
+    margin: 0;
+}
+
+
+
+/*
+---------------------------------------------
+TYPOGRAPHY
+---------------------------------------------
+*/
+
+h1, h2, h3,
+h4, h5, h6, p {
+    font-weight: 400;
+    margin: 0;
+}
+
+h2 {
+    font-family: var(--font-stack-secondary);
+    font-size: 50px;
+    font-weight: 100;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+p {
+    line-height: 1.5;
+}
+
+p,
+dl {
+    font-size: 22px;
+}
+
+p + p {
+    margin-top: 1em;
+}
+
+
+
+/*
+---------------------------------------------
+LAYOUT
+---------------------------------------------
+*/
+
+body {
+    background-color: var(--body-background-color);
+    color: var(--body-text-color);
+    /*font-family: Lato, Helvetica, Arial, sans-serif;*/
+    font-family: var(--font-stack-primary);
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header nav nav nav"
+            "header main main main";
+    }
+}
+
+.container {
+    margin: 0 auto;
+    width: 92%;
+}
+
+
+
+/*
+---------------------------------------------
+HEADER
+---------------------------------------------
+*/
+
+header {
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+    grid-area: header;
+    padding: 1em 0;
+}
+
+@media only screen and (min-width: 1200px) {
+    header {
+        padding: 10vh 0;
+    }
+    header .container {
+        max-width: none;
+        left: 0;
+        padding: 0 clamp(1em, 5vw, 3em);
+        position: sticky;
+        right: 0;
+        top: 10vh;
+        width: 100%;
+    }
+}
+
+header svg {
+    display: block;
+    fill: currentColor;
+    font-size: 0.875em;
+    height: 20em /*320px*/;
+    margin: 0 auto;
+    width: 20em /*320px*/;
+}
+
+@media only screen and (min-width: 1200px) {
+    header svg {
+        font-size: 1em;
+    }
+}
+
+.thing1 {
+    font-family: var(--font-stack-secondary);
+}
+
+header h1 {
+    font-size: 1em;
+}
+
+
+
+/*
+---------------------------------------------
+MAIN
+---------------------------------------------
+*/
+
+main {
+    grid-area: main;
+    margin: 3vh 0 2rem;
+}
+
+main .container {
+    /*background-color: white;*/
+    /*border-top-left-radius: 100px;*/
+    /*border-bottom-right-radius: 100px;*/
+    /*box-shadow: 0 24px 24px 16px rgba(0,0,0,0.1);*/
+    /*padding: 4em;*/
+    /*padding: clamp(1em, 6vw, 4.5em);*/
+    /*margin: 0 auto;*/
+    /*max-width: 1100px;*/
+    /*padding: 4em;*/
+    /*padding: clamp(1em, 10vw, 4em);*/
+}
+
+/*@media only screen and (min-width: 1200px) {*/
+/*    main .container {*/
+/*        margin: 0 auto 0 5%;*/
+/*    }*/
+/*}*/
+
+article + article {
+    margin-top: 90px;
+}
+
+article .container {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 92%;
+}
+
+#portfolio ol {
+    list-style: none;
+    counter-reset: custom-counter;
+    margin: 0;
+    padding: 0;
+}
+
+#portfolio li {
+    counter-increment: custom-counter;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 80px;
+}
+
+#portfolio li::before {
+    align-items: center;
+    background-color: var(--counter-background-color);
+    border-radius: 50%;
+    color: var(--counter-text-color);
+    content: counter(custom-counter);
+    display: flex;
+    flex: none;
+    font-size: 20px;
+    height: 2em;
+    justify-content: center;
+    line-height: 2;
+    outline: 1px solid transparent;
+    width: 2em;
+}
+
+#portfolio .foobar {
+    flex: 1 1 600px;
+}
+
+#portfolio .hey {
+    display: block;
+}
+
+#portfolio img,
+#portfolio video {
+    height: auto;
+    display: block;
+    width: 100%;
+}
+
+#portfolio figure {
+    margin-top: 1.5em;
+}
+
+#portfolio figcaption {
+    background-color: var(--color-1);
+    font-size: 20px;
+    padding: 1em;
+}
+
+dl {
+    margin: 0;
+}
+
+dl > div + div {
+    margin-top: 0.5em;
+}
+
+dt,
+dd {
+    display: inline;
+    margin: 0;
+}
+
+dt {
+    font-weight: 700;
+}
