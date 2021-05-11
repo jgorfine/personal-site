@@ -328,7 +328,7 @@ article .container {
     padding: 0;
 }
 
-.whizz li {
+.whizz > li {
     counter-increment: custom-counter;
     display: flex;
     flex-wrap: wrap;
@@ -336,11 +336,11 @@ article .container {
     /*margin-top: 80px;*/
 }
 
-.whizz li + li {
+.whizz > li + li {
     margin-top: 72px;
 }
 
-.whizz li::before {
+.whizz > li::before {
     align-items: center;
     background-color: var(--counter-background-color);
     border-radius: 50%;
@@ -398,4 +398,90 @@ dd {
 
 dt {
     font-weight: 700;
+}
+
+
+
+/*
+---------------------------------------------
+ABLEPLAYER
+---------------------------------------------
+*/
+
+.able-wrapper {
+    --ableplayer-player-background-color: var(--theme-color-3);
+    --ableplayer-controller-background-color: var(--theme-color-4);
+    --ableplayer-controller-color: var(--theme-color-1);
+    --ableplayer-big-play-button-color: var(--theme-color-1);
+    --ableplayer-seekbar-background-color: var(--theme-color-4);
+    --ableplayer-seekbar-loaded-background-color: var(--theme-color-1);
+    --ableplayer-seekbar-played-background-color: var(--theme-color-2);
+    --ableplayer-volume-track-on-background-color: var(--theme-color-1);
+    --ableplayer-status-bar-color: #fff;
+}
+
+.able,
+.able-player {
+    background-color: var(--ableplayer-player-background-color);
+}
+
+.able-controller {
+    background-color: var(--ableplayer-controller-background-color);
+}
+
+/*
+  Controller Buttons & Controls
+*/
+
+.able-big-play-button {
+    color: var(--ableplayer-big-play-button-color);
+}
+
+/*
+  Seekbar
+*/
+
+.able-seekbar {
+    background-color: var(--ableplayer-seekbar-background-color);
+}
+
+.able-seekbar-loaded {
+    background-color: var(--ableplayer-seekbar-loaded-background-color);
+    opacity: 0.5;
+}
+
+.able-seekbar-played {
+    background-color: var(--ableplayer-seekbar-played-background-color);
+}
+
+.able-seekbar-head {
+    background-color: #fff;
+}
+
+/*
+  Volume Slider
+*/
+
+.able-volume-slider {
+    background-color: var(--ableplayer-controller-background-color);
+}
+
+.able-volume-track {
+    background-color: var(--ableplayer-controller-background-color);
+}
+
+.able-volume-track.able-volume-track-on {
+    background-color: var(--ableplayer-volume-track-on-background-color);
+}
+
+.able-volume-head {
+
+}
+
+/*
+  Status Bar
+*/
+
+.able-status-bar {
+    color: var(--ableplayer-status-bar-color);
 }
