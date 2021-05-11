@@ -321,14 +321,14 @@ article .container {
     }
 }
 
-#portfolio ol {
+.whizz {
     list-style: none;
     counter-reset: custom-counter;
     margin: 0;
     padding: 0;
 }
 
-#portfolio li {
+.whizz li {
     counter-increment: custom-counter;
     display: flex;
     flex-wrap: wrap;
@@ -336,11 +336,11 @@ article .container {
     /*margin-top: 80px;*/
 }
 
-#portfolio li + li {
+.whizz li + li {
     margin-top: 72px;
 }
 
-#portfolio li::before {
+.whizz li::before {
     align-items: center;
     background-color: var(--counter-background-color);
     border-radius: 50%;
@@ -356,23 +356,23 @@ article .container {
     width: 2em;
 }
 
-#portfolio .foobar {
+.whizz .foobar {
     flex: 1 1 600px;
 }
 
-#portfolio .portfolio__demo {
+.whizz .portfolio__demo {
     display: block;
     margin-top: 2em;
 }
 
-#portfolio img,
-#portfolio video {
+.whizz img,
+.whizz video {
     height: auto;
     display: block;
     width: 100%;
 }
 
-#portfolio figcaption {
+.whizz figcaption {
     background-color: var(--figcaption-background-color);
     font-size: 20px;
     padding: 1em;
