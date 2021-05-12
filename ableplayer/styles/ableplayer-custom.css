@@ -849,60 +849,60 @@ ul.able-popup {
   Playlist (both audio and video)
 */
 
-.able-playlist {
-  list-style-type: none;
-  margin: 0;
-  background-color: #FFFFFF;
-  padding: 5px 0;
-}
-.able-playlist li {
-  background-color: #DDDDDD; /* default background color of each item in playlist */
-  margin: 5px;
-  padding: 0;
-  border: 2px solid #AAA;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-}
-.able-playlist li button {
-  border: none;
-  color: #000000;
-  background-color: transparent;
-  font-size: 1em;
-  width: 100%;
-  padding: 5px 10px;
-  text-align: left;
-}
-.able-playlist li button:hover,
-.able-playlist li button:focus,
-.able-playlist li button:active { /* playlist items when they have mouse or keyboard focus */
-  background-color: #FFEEB3;
-  color: #000000;
-  text-decoration: none;
-  outline: none;
-}
-.able-playlist li button::-moz-focus-inner {
-  border: 0;
-}
-.able-playlist li button img {
-  width: 100px;
-  float: left;
-  margin-right: 10px;
-}
-.able-playlist li.able-current { /* currently selected playlist item */
-  background-color: #340449;
-  border-color: #230330;
-}
-.able-playlist li.able-current button {
-  color: #FFFFFF;
-  font-weight: bold;
-  text-decoration: none;
-  outline: none;
-}
-.able-playlist li.able-current button:hover,
-.able-playlist li.able-current button:focus,
-.able-playlist li.able-current button:active   {
-  color: #000000;
-}
+/*.able-playlist {*/
+/*  list-style-type: none;*/
+/*  margin: 0;*/
+/*  background-color: #FFFFFF;*/
+/*  padding: 5px 0;*/
+/*}*/
+/*.able-playlist li {*/
+/*  background-color: #DDDDDD; !* default background color of each item in playlist *!*/
+/*  margin: 5px;*/
+/*  padding: 0;*/
+/*  border: 2px solid #AAA;*/
+/*  border-radius: 5px;*/
+/*  -moz-border-radius: 5px;*/
+/*}*/
+/*.able-playlist li button {*/
+/*  border: none;*/
+/*  color: #000000;*/
+/*  background-color: transparent;*/
+/*  font-size: 1em;*/
+/*  width: 100%;*/
+/*  padding: 5px 10px;*/
+/*  text-align: left;*/
+/*}*/
+/*.able-playlist li button:hover,*/
+/*.able-playlist li button:focus,*/
+/*.able-playlist li button:active { !* playlist items when they have mouse or keyboard focus *!*/
+/*  background-color: #FFEEB3;*/
+/*  color: #000000;*/
+/*  text-decoration: none;*/
+/*  outline: none;*/
+/*}*/
+/*.able-playlist li button::-moz-focus-inner {*/
+/*  border: 0;*/
+/*}*/
+/*.able-playlist li button img {*/
+/*  width: 100px;*/
+/*  float: left;*/
+/*  margin-right: 10px;*/
+/*}*/
+/*.able-playlist li.able-current { !* currently selected playlist item *!*/
+/*  background-color: #340449;*/
+/*  border-color: #230330;*/
+/*}*/
+/*.able-playlist li.able-current button {*/
+/*  color: #FFFFFF;*/
+/*  font-weight: bold;*/
+/*  text-decoration: none;*/
+/*  outline: none;*/
+/*}*/
+/*.able-playlist li.able-current button:hover,*/
+/*.able-playlist li.able-current button:focus,*/
+/*.able-playlist li.able-current button:active   {*/
+/*  color: #000000;*/
+/*}*/
 
 /*
   Search

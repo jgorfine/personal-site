@@ -205,12 +205,12 @@ header {
 
 @media only screen and (min-width: 1200px) {
     header {
-        padding: 10vh 0;
+        padding: 10vh clamp(1.125em, 3vw, 4em) 0;
     }
     header .container {
         max-width: none;
         left: 0;
-        padding: 0 clamp(1em, 5vw, 3em);
+        /*padding: 0 clamp(1em, 5vw, 3em);*/
         position: sticky;
         right: 0;
         top: 10vh;
@@ -219,7 +219,7 @@ header {
 }
 
 header h1 {
-    font-size: 1em;
+    font-size: clamp(0.875em, 1vw, 1.125em);
 }
 
 /*@media only screen and (min-width: 1200px) {*/
@@ -239,10 +239,6 @@ header svg {
 
 .thing1 {
     font-family: var(--font-stack-secondary);
-}
-
-header h1 {
-    font-size: 1em;
 }
 
 header nav {
@@ -311,74 +307,81 @@ article + article {
 }
 
 article .container {
-    max-width: 1280px;
+    /*max-width: 1440px;*/
 }
 
 @media only screen and (min-width: 1200px) {
     article .container {
-        margin: 0 auto 0 6%;
-        padding-right: 6%;
+        /*margin: 0 auto 0 6%;*/
+        /*padding-right: 6%;*/
     }
 }
 
-.whizz {
+.samples-list {
     list-style: none;
     counter-reset: custom-counter;
     margin: 0;
     padding: 0;
 }
 
-.whizz > li {
+.samples-list > li {
     counter-increment: custom-counter;
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
-    gap: 2em;
-    /*margin-top: 80px;*/
+    gap: 1em 2em;
+    grid-template-columns: 2em 4fr minmax(300px, 1fr);
 }
 
-.whizz > li + li {
+.samples-list > li + li {
     margin-top: 72px;
 }
 
-.whizz > li::before {
+.samples-list > li::before {
     align-items: center;
     background-color: var(--counter-background-color);
     border-radius: 50%;
     color: var(--counter-text-color);
     content: counter(custom-counter);
     display: flex;
-    flex: none;
     font-size: 26px;
+    grid-column: 1 / 2;
+    grid-row: 1;
     height: 2em;
     justify-content: center;
     line-height: 2;
+    margin-right: 2em;
     outline: 1px solid transparent;
     width: 2em;
 }
 
-.whizz .foobar {
-    flex: 1 1 600px;
+.samples-list .able-wrapper,
+.samples-list a[tabindex="-1"] {
+    grid-column: 2 / 3;
+    grid-row: 2;
 }
 
-.whizz .portfolio__demo {
-    display: block;
-    margin-top: 2em;
+.samples-list .able-playlist,
+.samples-list .able-transcript-area {
+    grid-column: 3 / 4;
+    grid-row: 2;
 }
 
-.whizz img,
-.whizz video {
+.samples-list .able-playlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*.samples-list video,*/
+.samples-list img {
     height: auto;
     display: block;
     width: 100%;
 }
 
-.whizz figcaption {
-    background-color: var(--figcaption-background-color);
-    font-size: 20px;
-    padding: 1em;
-}
-
 dl {
+    grid-column: 2 / 4;
+    grid-row: 1;
     margin: 0;
 }
 
@@ -398,6 +401,11 @@ dd {
 
 dt {
     font-weight: 700;
+}
+
+.samples-list .link--external {
+    grid-column: 2 / 3;
+    grid-row: 3;
 }
 
 
@@ -429,17 +437,9 @@ ABLEPLAYER
     background-color: var(--ableplayer-controller-background-color);
 }
 
-/*
-  Controller Buttons & Controls
-*/
-
 .able-big-play-button {
     color: var(--ableplayer-big-play-button-color);
 }
-
-/*
-  Seekbar
-*/
 
 .able-seekbar {
     background-color: var(--ableplayer-seekbar-background-color);
@@ -458,10 +458,6 @@ ABLEPLAYER
     background-color: #fff;
 }
 
-/*
-  Volume Slider
-*/
-
 .able-volume-slider {
     background-color: var(--ableplayer-controller-background-color);
 }
@@ -478,10 +474,10 @@ ABLEPLAYER
 
 }
 
-/*
-  Status Bar
-*/
-
 .able-status-bar {
     color: var(--ableplayer-status-bar-color);
+}
+
+.able-playlist {
+
 }
