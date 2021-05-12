@@ -317,8 +317,7 @@ article .container {
 
 @media only screen and (min-width: 1200px) {
     article .container {
-        /*margin: 0 auto 0 6%;*/
-        /*padding-right: 6%;*/
+        padding-right: 10%;
     }
 }
 
@@ -446,10 +445,31 @@ article .container {
 }
 
 .samples-list .able-playlist {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
     list-style: none;
     margin: 0;
     padding: 0;
 }
+
+.samples-list .able-playlist li {
+    flex: 1 1 auto;
+}
+
+.samples-list .able-playlist button {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (min-width: 1800px) {
+    .samples-list .able-playlist {
+        flex-direction: column;
+    }
+}
+
 
 .samples-list .able-transcript-area {
     height: auto;
