@@ -52,13 +52,13 @@
     <script src="./ableplayer/thirdparty/js.cookie.js"></script>
     <script src="./ableplayer/build/ableplayer.min.js"></script>
 </head>
-<body itemscope itemtype="https://schema.org/WebPage">
+<body class="palette--professional" itemscope itemtype="https://schema.org/WebPage">
     <meta itemprop="datePublished" content="2021-05-12">
     <meta itemprop="dateModified" content="2021-05-12">
     <meta itemprop="lastReviewed" content="2021-05-12">
     <header role="banner">
         <div class="container">
-            <h1>
+            <h1 id="introduction">
                 <svg aria-labelledby="introduction__title" viewBox="74 88 430 205" version="1.1" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink">
                     <title id="introduction__title">Jennifer Gorfine, UI Engineering & Web Accessibility</title>
@@ -69,70 +69,89 @@
                             <circle cx="296" cy="200" r="160" />
                         </clipPath>
                     </defs>
-                    <text class="thing1" dy="1" font-size="60" textLength="465">
+                    <text id="introduction__name" dy="1" font-size="60" textLength="465">
                         <textPath startOffset="5" textLength="465" href="#topSemiCircle">Jennifer Gorfine</textPath>
                     </text>
-                    <image x="23" y="28" href="https://assets.codepen.io/352907/headshot.jpg" clip-path="url(#innerCircle)" />
-                    <text class="thing2" dy="1" font-size="30" textLength="505">
+                    <image x="23" y="28" clip-path="url(#innerCircle)" href="images/headshot.jpg" />
+                    <text id="introduction__role" dy="1" font-size="30" textLength="505">
                         <textPath startOffset="113" textLength="505" href="#bottomSemiCircle">UI Engineering & Web Accessibility</textPath>
                     </text>
                 </svg>
             </h1>
-            <nav role="nav" aria-label="">
+            <nav role="navigation" aria-label="Primary navigation">
                 <ul class="whizz">
                     <li>
-<!--                        <div class="whoa">-->
-<!--                            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">-->
-<!--                                &lt;!&ndash; Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) &ndash;&gt;-->
-<!--                                <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>-->
-<!--                            </svg>-->
-<!--                        </div>-->
-                        <a class="link--external" href="https://www.linkedin.com/in/jennifergorfine/">
-                            <span>LinkedIn</span>
-                            <svg id="icon--external-link--1" aria-labelledby="icon--external-link--1__title" role="img"
-                                 viewBox="0 0 512 512"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <!-- Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
-                                <title id="icon--external-link--1__title">(opens an external site)</title>
-                                <path d="M432,288H416a16,16,0,0,0-16,16V458a6,6,0,0,1-6,6H54a6,6,0,0,1-6-6V118a6,6,0,0,1,6-6H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V304A16,16,0,0,0,432,288ZM500,0H364a12,12,0,0,0-8.48,20.48l48.19,48.21L131.51,340.89a12,12,0,0,0,0,17l22.63,22.63a12,12,0,0,0,17,0l272.2-272.21,48.21,48.2A12,12,0,0,0,512,148V12A12,12,0,0,0,500,0Z"/>
-                            </svg>
+                        <a class="link--text link--nav" href="#about">
+                            <span>About</span>
                         </a>
                     </li>
                     <li>
-                        <!--                        <div class="whoa">-->
-                        <!--                            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">-->
-                        <!--                                &lt;!&ndash; Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) &ndash;&gt;-->
-                        <!--                                <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>-->
-                        <!--                            </svg>-->
-                        <!--                        </div>-->
-                        <a class="link--external" href="https://github.com/jgorfine">
-                            <span>GitHub</span>
-                            <svg id="icon--external-link--2" aria-labelledby="icon--external-link--2__title" role="img"
-                                 viewBox="0 0 512 512"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <!-- Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
-                                <title id="icon--external-link--2__title">(opens an external site)</title>
-                                <path d="M432,288H416a16,16,0,0,0-16,16V458a6,6,0,0,1-6,6H54a6,6,0,0,1-6-6V118a6,6,0,0,1,6-6H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V304A16,16,0,0,0,432,288ZM500,0H364a12,12,0,0,0-8.48,20.48l48.19,48.21L131.51,340.89a12,12,0,0,0,0,17l22.63,22.63a12,12,0,0,0,17,0l272.2-272.21,48.21,48.2A12,12,0,0,0,512,148V12A12,12,0,0,0,500,0Z"/>
-                            </svg>
+                        <a class="link--text link--nav" href="#featured-work">
+                            <span>Featured Work</span>
                         </a>
                     </li>
                     <li>
-                        <!--                        <div class="whoa">-->
-                        <!--                            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">-->
-                        <!--                                &lt;!&ndash; Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) &ndash;&gt;-->
-                        <!--                                <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>-->
-                        <!--                            </svg>-->
-                        <!--                        </div>-->
-                        <a class="link--external" href="https://codepen.io/jgorfine">
-                            <span>Codepen</span>
-                            <svg id="icon--external-link--3" aria-labelledby="icon--external-link--3__title" role="img"
-                                 viewBox="0 0 512 512"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <!-- Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
-                                <title id="icon--external-link--3__title">(opens an external site)</title>
-                                <path d="M432,288H416a16,16,0,0,0-16,16V458a6,6,0,0,1-6,6H54a6,6,0,0,1-6-6V118a6,6,0,0,1,6-6H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V304A16,16,0,0,0,432,288ZM500,0H364a12,12,0,0,0-8.48,20.48l48.19,48.21L131.51,340.89a12,12,0,0,0,0,17l22.63,22.63a12,12,0,0,0,17,0l272.2-272.21,48.21,48.2A12,12,0,0,0,512,148V12A12,12,0,0,0,500,0Z"/>
-                            </svg>
+                        <a class="link--text link--nav" href="#presentations">
+                            <span>Presentations</span>
                         </a>
+                    </li>
+                        <li>
+                            <ul>
+                            <li>
+        <!--                        <div class="whoa">-->
+        <!--                            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">-->
+        <!--                                &lt;!&ndash; Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) &ndash;&gt;-->
+        <!--                                <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>-->
+        <!--                            </svg>-->
+        <!--                        </div>-->
+                                <a class="link--external link--nav" href="https://www.linkedin.com/in/jennifergorfine/">
+                                    <span>LinkedIn</span>
+                                    <svg id="icon--external-link--1" aria-labelledby="icon--external-link--1__title" role="img"
+                                         viewBox="0 0 512 512"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                        <title id="icon--external-link--1__title">(opens an external site)</title>
+                                        <path d="M432,288H416a16,16,0,0,0-16,16V458a6,6,0,0,1-6,6H54a6,6,0,0,1-6-6V118a6,6,0,0,1,6-6H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V304A16,16,0,0,0,432,288ZM500,0H364a12,12,0,0,0-8.48,20.48l48.19,48.21L131.51,340.89a12,12,0,0,0,0,17l22.63,22.63a12,12,0,0,0,17,0l272.2-272.21,48.21,48.2A12,12,0,0,0,512,148V12A12,12,0,0,0,500,0Z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <!--                        <div class="whoa">-->
+                                <!--                            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">-->
+                                <!--                                &lt;!&ndash; Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) &ndash;&gt;-->
+                                <!--                                <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>-->
+                                <!--                            </svg>-->
+                                <!--                        </div>-->
+                                <a class="link--external link--nav" href="https://github.com/jgorfine">
+                                    <span>GitHub</span>
+                                    <svg id="icon--external-link--2" aria-labelledby="icon--external-link--2__title" role="img"
+                                         viewBox="0 0 512 512"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                        <title id="icon--external-link--2__title">(opens an external site)</title>
+                                        <path d="M432,288H416a16,16,0,0,0-16,16V458a6,6,0,0,1-6,6H54a6,6,0,0,1-6-6V118a6,6,0,0,1,6-6H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V304A16,16,0,0,0,432,288ZM500,0H364a12,12,0,0,0-8.48,20.48l48.19,48.21L131.51,340.89a12,12,0,0,0,0,17l22.63,22.63a12,12,0,0,0,17,0l272.2-272.21,48.21,48.2A12,12,0,0,0,512,148V12A12,12,0,0,0,500,0Z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <!--                        <div class="whoa">-->
+                                <!--                            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">-->
+                                <!--                                &lt;!&ndash; Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) &ndash;&gt;-->
+                                <!--                                <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>-->
+                                <!--                            </svg>-->
+                                <!--                        </div>-->
+                                <a class="link--external link--nav" href="https://codepen.io/jgorfine">
+                                    <span>Codepen</span>
+                                    <svg id="icon--external-link--3" aria-labelledby="icon--external-link--3__title" role="img"
+                                         viewBox="0 0 512 512"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                        <title id="icon--external-link--3__title">(opens an external site)</title>
+                                        <path d="M432,288H416a16,16,0,0,0-16,16V458a6,6,0,0,1-6,6H54a6,6,0,0,1-6-6V118a6,6,0,0,1,6-6H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V304A16,16,0,0,0,432,288ZM500,0H364a12,12,0,0,0-8.48,20.48l48.19,48.21L131.51,340.89a12,12,0,0,0,0,17l22.63,22.63a12,12,0,0,0,17,0l272.2-272.21,48.21,48.2A12,12,0,0,0,512,148V12A12,12,0,0,0,500,0Z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
@@ -142,16 +161,16 @@
         <article id="about" aria-labelledby="about__title">
             <div class="container">
                 <h2 id="about__title">About</h2>
-                <p>I&rsquo;m a front-end engineer & web accessibility specialist with 8 years of professional experience.</p>
+                <p>I&rsquo;m a front-end UI engineer and web accessibility specialist with 8 years of professional experience.</p>
                 <p>I love collaborating with designers to come up with solutions to user needs, and then translating those solutions into
                 delightful, pixel-perfect, and inclusive experiences, in code.</p>
             </div>
         </article>
-        <article id="portfolio" aria-labelledby="portfolio__title">
+        <article id="featured-work" aria-labelledby="featured-work__title">
             <div class="container">
-                <h2 id="portfolio__title">Featured Work</h2>
-                <ol class="samples-list">
-                    <li>
+                <h2 id="featured-work__title">Featured Work</h2>
+                <ol class="samples">
+                    <li class="sample">
                         <dl>
                             <div>
                                 <dt class="a11y-screen-reader-only">Project:</dt>
@@ -187,7 +206,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="sample">
                         <dl>
                             <div>
                                 <dt class="a11y-screen-reader-only">Project:</dt>
@@ -202,23 +221,29 @@
                                 <dd>HTML, CSS, JavaScript, Handlebars.js, Vue.js, Highcharts</dd>
                             </div>
                         </dl>
-                        <a class="portfolio__demo" href="https://coronavirus.fiscalnote.com/"
+                        <a class="link--img sample__link" href="https://coronavirus.fiscalnote.com/"
                            aria-label="Visit the FiscalNote Coronavirus Updates & Resource Center (opens an external site)"
                            tabindex="-1">
                             <img src="images/fn-covid-site.png" alt="A screenshot of the FiscalNote Coronavirus Updates & Resource Center homepage" />
                         </a>
-<!--                        <a class="link&#45;&#45;external" href="https://www.linkedin.com/in/jennifergorfine/">-->
-<!--                            <span>See the FiscalNote Coronavirus Updates & Resource Center live</span>-->
-<!--                            <svg id="icon&#45;&#45;external-link&#45;&#45;4" aria-labelledby="icon&#45;&#45;external-link&#45;&#45;4__title" role="img"-->
-<!--                                 viewBox="0 0 512 512"-->
-<!--                                 xmlns="http://www.w3.org/2000/svg">-->
-<!--                                &lt;!&ndash; Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) &ndash;&gt;-->
-<!--                                <title id="icon&#45;&#45;external-link&#45;&#45;4__title">(opens an external site)</title>-->
-<!--                                <path d="M432,288H416a16,16,0,0,0-16,16V458a6,6,0,0,1-6,6H54a6,6,0,0,1-6-6V118a6,6,0,0,1,6-6H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V304A16,16,0,0,0,432,288ZM500,0H364a12,12,0,0,0-8.48,20.48l48.19,48.21L131.51,340.89a12,12,0,0,0,0,17l22.63,22.63a12,12,0,0,0,17,0l272.2-272.21,48.21,48.2A12,12,0,0,0,512,148V12A12,12,0,0,0,500,0Z"/>-->
-<!--                            </svg>-->
-<!--                        </a>-->
+                        <a class="link--external sample__link" href="https://coronavirus.fiscalnote.com/">
+                            <span>See the FiscalNote Coronavirus Updates & Resource Center live</span>
+                            <svg id="icon--external-link--4" aria-labelledby="icon--external-link--4__title" role="img"
+                                 viewBox="0 0 512 512"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <!-- Font Awesome Pro 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                <title id="icon--external-link--4__title">(opens an external site)</title>
+                                <path d="M432,288H416a16,16,0,0,0-16,16V458a6,6,0,0,1-6,6H54a6,6,0,0,1-6-6V118a6,6,0,0,1,6-6H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V304A16,16,0,0,0,432,288ZM500,0H364a12,12,0,0,0-8.48,20.48l48.19,48.21L131.51,340.89a12,12,0,0,0,0,17l22.63,22.63a12,12,0,0,0,17,0l272.2-272.21,48.21,48.2A12,12,0,0,0,512,148V12A12,12,0,0,0,500,0Z"/>
+                            </svg>
+                        </a>
                     </li>
                 </ol>
+            </div>
+        </article>
+        <article id="presentations" aria-labelledby="presentations__title">
+            <div class="container">
+                <h2 id="presentations__title">Presentations</h2>
+                <p>Presentation recordings coming soon.</p>
             </div>
         </article>
     </main>

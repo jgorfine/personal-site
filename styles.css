@@ -47,7 +47,14 @@ body {
     width: 100%;
 }
 
-figure {
+q,
+blockquote {
+    margin: 0;
+}
+
+h1, h2, h3,
+h4, h5, h6, p {
+    font-weight: 400;
     margin: 0;
 }
 
@@ -60,26 +67,47 @@ THEME
 */
 
 :root {
-    --font-stack-primary: Lato, Helvetica, Arial, sans-serif;
-    --font-stack-secondary: "Nixie One", serif;
+    --theme-font-stack-primary: Lato, Helvetica, Arial, sans-serif;
+    --theme-font-stack-secondary: "Nixie One", serif;
 
+    --body-font-family: var(--theme-font-stack-primary);
+    --body-text-color: var(--theme-color-4);
+
+    --title-font-size: 3.5em; /*56px*/
+    --title-font-stack: var(--theme-font-stack-secondary);
+    --title-font-weight: 100;
+    --title-line-height: 1.1;
+
+    --subtitle-font-size: 2.125em; /*34px*/
+    --subtitle-font-stack: inherit;
+    --subtitle-font-weight: 400;
+    --subtitle-line-height: 1.1;
+
+    --foo-font-size: 1.5em; /*24px*/
+
+    --counter-font-size: 1.5em; /*24px*/
+    --counter-diameter: 1.75em;
+}
+
+.palette--professional {
+    /* Palette from ColorHunt */
     /* https://colorhunt.co/palette/196180 */
     --theme-color-1: #ebecf1;
     --theme-color-2: #206a5d;
     --theme-color-3: #1f4068;
     --theme-color-4: #1b1c25;
+    --theme-color-5: #fff;
 
-    --body-background-color: #fff;
-    --body-text-color: var(--theme-color-4);
+    --body-background-color: var(--theme-color-5);
     --header-background-color: var(--theme-color-3);
     --header-text-color: var(--theme-color-1);
-    --heading-color: var(--theme-color-2);
     --nav-background-color: var(--theme-color-2);
+    --nav-color: var(--theme-color-5);
+    --title-color: var(--theme-color-2);
+    --subtitle-color: inherit;
     --counter-background-color: var(--theme-color-2);
     --counter-text-color: var(--theme-color-1);
-    --figcaption-background-color: var(--theme-color-1);
 }
-
 
 
 /*
@@ -88,41 +116,35 @@ TYPOGRAPHY
 ---------------------------------------------
 */
 
-h1, h2, h3,
-h4, h5, h6, p {
-    font-weight: 400;
-    margin: 0;
-}
-
 h2 {
-    color: var(--heading-color);
-    font-family: var(--font-stack-secondary);
-    font-size: 55px;
-    font-weight: 100;
+    color: var(--title-color);
+    font-family: var(--title-font-stack);
+    font-size: var(--title-font-size);
+    font-weight: var(--title-font-weight);
+    line-height: var(--title-line-height);
     margin-bottom: 36px;
 }
 
 h3 {
-    font-size: 34px;
-    line-height: 1.3;
+    color: var(--subtitle-color);
+    font-family: var(--subtitle-font-stack);
+    font-size: var(--subtitle-font-size);
+    font-weight: var(--subtitle-font-weight);
+    line-height: var(--subtitle-line-height);
 }
 
 p {
-    /*line-height: 1.5;*/
+    font-size: var(--foo-font-size);
+    line-height: 1.5;
 }
 
-p,
-dl {
-    font-size: 24px;
-}
+/*p,*/
+/*dd {*/
+/*    font-size: var(--foo-font-size);*/
+/*}*/
 
 p + p {
     margin-top: 1em;
-}
-
-q,
-blockquote {
-    margin: 0;
 }
 
 .button {
@@ -150,19 +172,24 @@ blockquote {
 }
 
 .link--external {
-    align-items: baseline;
+    align-items: flex-end;
     color: inherit;
     display: inline-flex;
     font-size: inherit;
     line-height: 1.4;
-    text-decoration: none;
+    /*text-decoration: none;*/
 }
 
 .link--external svg {
     fill: currentColor;
     height: 0.875em;
+    margin-bottom: 3px;
     margin-left: 0.25em;
     width: 0.875em;
+}
+
+.link--nav {
+    color: currentColor;
 }
 
 
@@ -176,7 +203,7 @@ LAYOUT
 body {
     background-color: var(--body-background-color);
     color: var(--body-text-color);
-    font-family: var(--font-stack-primary);
+    font-family: var(--body-font-family);
 }
 
 @media only screen and (min-width: 1200px) {
@@ -223,17 +250,19 @@ header {
     }
 }
 
-header h1 {
+
+
+/*
+---------------------------------------------
+HEADER ➝ INTRODUCTION
+---------------------------------------------
+*/
+
+#introduction {
     font-size: clamp(0.875em, 1vw, 1.125em);
 }
 
-/*@media only screen and (min-width: 1200px) {*/
-/*    header h1 {*/
-/*        font-size: 1em;*/
-/*    }*/
-/*}*/
-
-header svg {
+#introduction svg {
     display: block;
     fill: currentColor;
     font-size: 1em;
@@ -242,9 +271,17 @@ header svg {
     width: 20em /*320px*/;
 }
 
-.thing1 {
-    font-family: var(--font-stack-secondary);
+#introduction__name {
+    font-family: var(--theme-font-stack-secondary);
 }
+
+
+
+/*
+---------------------------------------------
+HEADER ➝ NAV
+---------------------------------------------
+*/
 
 header nav {
     /*background-color: var(--nav-background-color);*/
@@ -258,12 +295,6 @@ header nav ul {
     margin: 0;
     padding: 0;
 }
-
-/*header nav li {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    gap: 2em;*/
-/*}*/
 
 header nav li + li {
     margin-top: 1em;
@@ -303,8 +334,21 @@ MAIN
 */
 
 main {
+    font-size: 0.875rem;
     grid-area: main;
     margin: 3em 0 6em;
+}
+
+@media only screen and (min-width: 1200px) {
+    main {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    main {
+        font-size: 1.125rem;
+    }
 }
 
 article + article {
@@ -321,14 +365,20 @@ article .container {
     }
 }
 
-.samples-list {
+/*
+---------------------------------------------
+MAIN ➝ SAMPLES LISTS
+---------------------------------------------
+*/
+
+.samples {
     list-style: none;
     counter-reset: custom-counter;
     margin: 0;
     padding: 0;
 }
 
-.samples-list > li {
+.samples > li {
     counter-increment: custom-counter;
     display: grid;
     flex-wrap: wrap;;
@@ -336,115 +386,115 @@ article .container {
 }
 
 @media only screen and (min-width: 550px) {
-    .samples-list > li {
+    .samples > li {
         grid-template-columns: auto 1fr;
     }
 }
 
 @media only screen and (min-width: 1800px) {
-    .samples-list > li {
+    .samples > li {
         /*grid-gap: 2em 0;*/
         grid-template-columns: auto 3fr minmax(300px, 1fr);
     }
 
 }
 
-.samples-list > li + li {
+.samples > li + li {
     margin-top: 72px;
 }
 
-.samples-list > li::before {
+.samples > li::before {
     align-items: center;
     background-color: var(--counter-background-color);
     border-radius: 50%;
     color: var(--counter-text-color);
     content: counter(custom-counter);
     display: flex;
-    font-size: 26px;
+    font-size: var(--counter-font-size);
     grid-column: 1 / 2;
     grid-row: 1;
-    height: 2em;
+    height: var(--counter-diameter);
     justify-content: center;
     line-height: 2;
     outline: 1px solid transparent;
-    width: 2em;
+    width: var(--counter-diameter);
 }
 
 @media only screen and (min-width: 550px) {
-    .samples-list > li::before {
+    .samples > li::before {
         margin-right: 1em;
     }
 }
 
-.samples-list .able-wrapper,
-.samples-list a[tabindex="-1"],
-.samples-list .able-playlist,
-.samples-list .able-transcript-area {
+.samples .able-wrapper,
+.samples a[tabindex="-1"],
+.samples .able-playlist,
+.samples .able-transcript-area {
     grid-column: 1 / 2;
 }
 
-.samples-list .able-wrapper,
-.samples-list a[tabindex="-1"] {
+.samples .able-wrapper,
+.samples a[tabindex="-1"] {
     grid-row: 4;
 }
 
-.samples-list .able-playlist,
-.samples-list .able-transcript-area {
+.samples .able-playlist,
+.samples .able-transcript-area {
     grid-row: 5;
 }
 
 @media only screen and (min-width: 550px) {
-    .samples-list .able-wrapper,
-    .samples-list a[tabindex="-1"],
-    .samples-list .able-playlist,
-    .samples-list .able-transcript-area {
+    .samples .able-wrapper,
+    .samples a[tabindex="-1"],
+    .samples .able-playlist,
+    .samples .able-transcript-area {
         grid-column: 1 / 4;
     }
 
-    .samples-list .able-wrapper,
-    .samples-list a[tabindex="-1"] {
+    .samples .able-wrapper,
+    .samples a[tabindex="-1"] {
         grid-row: 3;
     }
 
-    .samples-list .able-playlist,
-    .samples-list .able-transcript-area {
+    .samples .able-playlist,
+    .samples .able-transcript-area {
         grid-row: 4;
     }
 }
 
 @media only screen and (min-width: 1000px) {
-    .samples-list .able-wrapper,
-    .samples-list a[tabindex="-1"],
-    .samples-list .able-playlist,
-    .samples-list .able-transcript-area {
+    .samples .able-wrapper,
+    .samples a[tabindex="-1"],
+    .samples .able-playlist,
+    .samples .able-transcript-area {
         grid-column: 2 / 4;
     }
 
-    .samples-list .able-wrapper,
-    .samples-list a[tabindex="-1"] {
+    .samples .able-wrapper,
+    .samples a[tabindex="-1"] {
         grid-row: 2;
     }
 
-    .samples-list .able-playlist,
-    .samples-list .able-transcript-area {
+    .samples .able-playlist,
+    .samples .able-transcript-area {
         grid-row: 3;
     }
 }
 
 @media only screen and (min-width: 1800px) {
-    .samples-list .able-wrapper,
-    .samples-list a[tabindex="-1"] {
+    .samples .able-wrapper,
+    .samples a[tabindex="-1"] {
         grid-column: 2 / 3;
     }
 
-    .samples-list .able-playlist,
-    .samples-list .able-transcript-area {
+    .samples .able-playlist,
+    .samples .able-transcript-area {
         grid-column: 3 / 4;
         grid-row: 2;
     }
 }
 
-.samples-list .able-playlist {
+.samples .able-playlist {
     align-items: stretch;
     display: flex;
     flex-wrap: wrap;
@@ -454,66 +504,64 @@ article .container {
     padding: 0;
 }
 
-.samples-list .able-playlist li {
+.samples .able-playlist li {
     flex: 1 1 auto;
 }
 
-.samples-list .able-playlist button {
+.samples .able-playlist button {
     display: block;
     height: 100%;
     width: 100%;
 }
 
 @media only screen and (min-width: 1800px) {
-    .samples-list .able-playlist {
+    .samples .able-playlist {
         flex-direction: column;
     }
 }
 
-
-.samples-list .able-transcript-area {
+.samples .able-transcript-area {
     height: auto;
 }
 
-/*.samples-list video,*/
-.samples-list img {
+.samples img {
     height: auto;
     display: block;
     width: 100%;
 }
 
-dl {
+.samples dl {
     grid-column: 1 / 2;
     grid-row: 2;
     margin: 0;
 }
 
 @media only screen and (min-width: 550px) {
-    dl {
+    .samples dl {
         grid-column: 2 / 4;
         grid-row: 1;
     }
 }
 
-dl > div {
+.samples dl > div {
     line-height: 1.3;
 }
 
-dl > div + div {
+.samples dl > div + div {
     /*margin-top: 0.75em;*/
 }
 
-dt,
-dd {
+.samples dt,
+.samples dd {
     display: inline;
     margin: 0;
 }
 
-dt {
+.samples dt {
     font-weight: 700;
 }
 
-.samples-list .link--external {
+.samples .link--external {
     grid-column: 2 / 3;
     grid-row: 3;
 }
@@ -522,7 +570,7 @@ dt {
 
 /*
 ---------------------------------------------
-ABLEPLAYER
+MAIN ➝ ABLEPLAYER
 ---------------------------------------------
 */
 
