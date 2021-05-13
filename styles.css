@@ -70,33 +70,33 @@ THEME
     --theme-font-stack-primary: Lato, Helvetica, Arial, sans-serif;
     --theme-font-stack-secondary: "Nixie One", serif;
 
+    --foo-font-size: 1.5em; /*24px*/
+
     --body-font-family: var(--theme-font-stack-primary);
     --body-text-color: var(--theme-color-4);
 
-    --title-font-size: 3.5em; /*56px*/
+    --title-font-size: 2.25em; /*56px, 24px base*/
     --title-font-stack: var(--theme-font-stack-secondary);
     --title-font-weight: 100;
     --title-line-height: 1.1;
 
-    --subtitle-font-size: 2.125em; /*34px*/
+    --subtitle-font-size: 1.5em; /*36px, 24px base*/
     --subtitle-font-stack: inherit;
     --subtitle-font-weight: 400;
     --subtitle-line-height: 1.1;
 
-    --foo-font-size: 1.5em; /*24px*/
-
-    --counter-font-size: 1.5em; /*24px*/
-    --counter-diameter: 1.75em;
+    --counter-font-size: 1em; /*24px, 24px base*/
+    --counter-diameter: 1.167em; /*28px, 24px base*/
 }
 
 .palette--professional {
     /* Palette from ColorHunt */
     /* https://colorhunt.co/palette/196180 */
-    --theme-color-1: #ebecf1;
-    --theme-color-2: #206a5d;
-    --theme-color-3: #1f4068;
-    --theme-color-4: #1b1c25;
-    --theme-color-5: #fff;
+    --theme-color-1: #ebecf1; /*rgb(235, 236, 241)*/
+    --theme-color-2: #206a5d; /*rgb(32, 106, 93)*/
+    --theme-color-3: #1f4068; /*rgb(31, 64, 104)*/
+    --theme-color-4: #1b1c25; /*rgb(27, 28, 37)*/
+    --theme-color-5: #fff;    /*rgba(255, 255, 255)*/
 
     --body-background-color: var(--theme-color-5);
     --header-background-color: var(--theme-color-3);
@@ -134,14 +134,9 @@ h3 {
 }
 
 p {
-    font-size: var(--foo-font-size);
+    font-size: 1em;
     line-height: 1.5;
 }
-
-/*p,*/
-/*dd {*/
-/*    font-size: var(--foo-font-size);*/
-/*}*/
 
 p + p {
     margin-top: 1em;
@@ -171,25 +166,62 @@ p + p {
     top: 3px;
 }
 
-.link--external {
-    align-items: flex-end;
+.link--text {
     color: inherit;
-    display: inline-flex;
     font-size: inherit;
-    line-height: 1.4;
-    /*text-decoration: none;*/
+    line-height: 1;
+    text-decoration: none;
+    /*text-transform: uppercase;*/
 }
 
-.link--external svg {
+.link--text,
+.link--icon {
     fill: currentColor;
-    height: 0.875em;
-    margin-bottom: 3px;
-    margin-left: 0.25em;
-    width: 0.875em;
 }
 
-.link--nav {
-    color: currentColor;
+.link--text.link--external {
+    align-items: baseline;
+    display: inline-flex;
+}
+
+.link--text.link--external svg {
+    height: 0.75em;
+    margin-left: 0.35em;
+    width: 0.75em;
+}
+
+.link--icon,
+.li--with-counter::before {
+    align-items: center;
+    background-color: var(--counter-background-color);
+    border-radius: 50%;
+    color: var(--counter-text-color);
+    content: counter(custom-counter);
+    display: flex;
+    flex: none;
+    font-size: 1.25em;
+    height: 2em;
+    justify-content: center;
+    line-height: 2;
+    outline: 1px solid transparent;
+    position: relative;
+    width: 2em;
+}
+
+.link--icon:hover::after,
+.link--icon:focus::after {
+    bottom: -2em;
+    content: attr(data-whatever);
+    display: block;
+    font-size: 0.75em;
+    left: -0.5em;
+    position: absolute;
+    text-align: center;
+}
+
+.link--icon svg {
+    height: 1em;
+    width: 1em;
 }
 
 
@@ -233,6 +265,7 @@ header {
     color: var(--header-text-color);
     grid-area: header;
     padding: 1em 0;
+    text-align: center;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -285,44 +318,41 @@ HEADER ➝ NAV
 
 header nav {
     /*background-color: var(--nav-background-color);*/
+    display: inline-block;
     font-size: 20px;
-    margin: 3em auto 0;
-    padding: 1em;
+    margin: 10vh auto 0;
 }
 
-header nav ul {
+header ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-header nav li + li {
-    margin-top: 1em;
-}
-
-header nav .whoa {
+header .whizz {
     align-items: center;
-    background-color: var(--counter-background-color);
-    border-radius: 50%;
-    color: var(--counter-text-color);
-    content: counter(custom-counter);
     display: flex;
-    flex: none;
-    font-size: 26px;
-    height: 1.5em;
+    flex-wrap: wrap;
+    gap: 1em 1.5em;
     justify-content: center;
-    line-height: 2;
-    outline: 1px solid transparent;
-    width: 1.5em;
 }
 
-header nav .whoa svg {
-    height: 0.75em;
-    width: 0.75em;
+@media only screen and (min-width: 1200px) {
+    header .whizz {
+        flex-direction: column;
+        gap: 2em;
+    }
 }
 
-header nav svg {
-    fill: currentColor;
+header .whizz > li:last-child {
+    flex: 1 1 100%;
+}
+
+header .profiles {
+    align-items: center;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
 }
 
 
@@ -351,12 +381,12 @@ main {
     }
 }
 
-article + article {
-    margin-top: 90px;
+article {
+    font-size: var(--foo-font-size);
 }
 
-article .container {
-    /*max-width: 1440px;*/
+article + article {
+    margin-top: 90px;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -403,22 +433,22 @@ MAIN ➝ SAMPLES LISTS
     margin-top: 72px;
 }
 
-.samples > li::before {
-    align-items: center;
-    background-color: var(--counter-background-color);
-    border-radius: 50%;
-    color: var(--counter-text-color);
-    content: counter(custom-counter);
-    display: flex;
-    font-size: var(--counter-font-size);
-    grid-column: 1 / 2;
-    grid-row: 1;
-    height: var(--counter-diameter);
-    justify-content: center;
-    line-height: 2;
-    outline: 1px solid transparent;
-    width: var(--counter-diameter);
-}
+/*.samples > li::before {*/
+/*    align-items: center;*/
+/*    background-color: var(--counter-background-color);*/
+/*    border-radius: 50%;*/
+/*    color: var(--counter-text-color);*/
+/*    content: counter(custom-counter);*/
+/*    display: flex;*/
+/*    font-size: var(--counter-font-size);*/
+/*    grid-column: 1 / 2;*/
+/*    grid-row: 1;*/
+/*    height: var(--counter-diameter);*/
+/*    justify-content: center;*/
+/*    line-height: 2;*/
+/*    outline: 1px solid transparent;*/
+/*    width: var(--counter-diameter);*/
+/*}*/
 
 @media only screen and (min-width: 550px) {
     .samples > li::before {
