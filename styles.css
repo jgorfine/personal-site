@@ -29,7 +29,6 @@ RESET
 
 html {
     box-sizing: border-box;
-    font-size: 16px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -107,7 +106,7 @@ THEME
     --theme-font-stack-primary: "Atkinson Hyperlegible", Verdana, sans-serif;
     --theme-font-stack-secondary: "Nixie One", serif;
 
-    --foo-font-size: 1.5em;
+    --base-font-size: 1.25em;
 
     --body-font-family: var(--theme-font-stack-primary);
     --body-text-color: var(--theme-color-4);
@@ -117,13 +116,25 @@ THEME
     --title-font-weight: 100;
     --title-line-height: 1.1;
 
-    --subtitle-font-size: 1.25em;
+    --subtitle-font-size: 1.5em;
     --subtitle-font-stack: inherit;
     --subtitle-font-weight: 400;
     --subtitle-line-height: 1.1;
 
     --counter-font-size: 1em;
     --counter-diameter: 1.167em;
+}
+
+@media only screen and (min-width: 750px) {
+    :root {
+        --base-font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    :root {
+        --base-font-size: 1.75em;
+    }
 }
 
 .palette--professional {
@@ -152,6 +163,10 @@ THEME
 TYPOGRAPHY
 ---------------------------------------------
 */
+
+html {
+    font-size: var(--base-font-size);
+}
 
 h2 {
     color: var(--title-color);
@@ -247,6 +262,7 @@ p + p {
     display: flex;
     fill: currentColor;
     flex: none;
+    flex-direction: column;
     font-size: 1em;
     height: 1.75em;
     justify-content: center;
@@ -269,18 +285,20 @@ LAYOUT
 ---------------------------------------------
 */
 
-body {
+.test {
     background-color: var(--body-background-color);
     color: var(--body-text-color);
     font-family: var(--body-font-family);
 }
 
 @media only screen and (min-width: 1200px) {
-    body {
-        display: grid;
-        grid-template-areas:
-            "header nav nav nav nav nav nav"
-            "header main main main main main main";
+    .test {
+        /*display: grid;*/
+        /*grid-template-areas:*/
+        /*    "header nav nav nav nav nav nav"*/
+        /*    "header main main main main main main";*/
+        align-items: stretch;
+        display: flex;
     }
 }
 
@@ -295,14 +313,14 @@ HEADER
 header {
     background-color: var(--header-background-color);
     color: var(--header-text-color);
-    grid-area: header;
+    flex: none;
     padding: 1em 4% 3em;
     text-align: center;
 }
 
 @media only screen and (min-width: 1200px) {
     header {
-        padding: 10vh clamp(1.125em, 3vw, 4em) 0;
+        padding: 10vh clamp(1.125em, 4%, 3em) 0;
     }
 }
 
@@ -340,8 +358,15 @@ HEADER ➝ INTRODUCTION
 
 #introduction {
     display: inline-block;
-    font-size: clamp(0.875em, 1vw, 1.125em);
+    font-size: clamp(0.65em, 1vw, 0.55em);
+    /*font-size: 0.5em*/
 }
+
+/*@media only screen and (min-width: 1800px) {*/
+/*    #introduction {*/
+/*        font-size: 0.7em;*/
+/*    }*/
+/*}*/
 
 #introduction svg {
     display: block;
@@ -366,7 +391,7 @@ NAV
 
 nav {
     display: block;
-    font-size: clamp(20px, 1.5vw, 24px);
+    /*font-size: clamp(20px, 1.5vw, 24px);*/
     margin: 2em 0 0;
     position: relative;
     left: -0.6em;
@@ -457,20 +482,8 @@ MAIN
 */
 
 main {
-    font-size: 0.875rem;
-    grid-area: main;
+    flex: 1 1 100%;
     margin: 3em 0 6em;
-}
-
-@media only screen and (min-width: 1765px) {
-    main {
-        font-size: 1rem;
-    }
-}
-
-
-article {
-    font-size: var(--foo-font-size);
 }
 
 article + article {
@@ -504,7 +517,6 @@ MAIN ➝ SAMPLES LISTS
 .samples > li {
     counter-increment: custom-counter;
     display: grid;
-    flex-wrap: wrap;;
     grid-template-columns: 1fr;
 }
 
@@ -514,7 +526,7 @@ MAIN ➝ SAMPLES LISTS
     }
 }
 
-@media only screen and (min-width: 1765px) {
+@media only screen and (min-width: 2000px) {
     .samples > li {
         /*grid-gap: 2em 0;*/
         grid-template-columns: auto 3fr minmax(300px, 1fr);
@@ -527,7 +539,8 @@ MAIN ➝ SAMPLES LISTS
 }
 
 .samples > li::before {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+    padding-top: 0.2em;
 }
 
 @media only screen and (min-width: 550px) {
@@ -592,7 +605,7 @@ MAIN ➝ SAMPLES LISTS
     }
 }
 
-@media only screen and (min-width: 1765px) {
+@media only screen and (min-width: 2000px) {
     .samples .able-wrapper,
     .samples a[tabindex="-1"] {
         grid-column: 2 / 3;
@@ -606,16 +619,23 @@ MAIN ➝ SAMPLES LISTS
 }
 
 .samples .able-playlist {
-    align-items: stretch;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: stretch;
+    display: none;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+@media only screen and (min-width: 2000px) {
+    .samples .able-playlist {
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+    }
+}
+
 .samples .able-playlist li {
+    display: block;
     flex: 1 1 auto;
 }
 
@@ -625,14 +645,9 @@ MAIN ➝ SAMPLES LISTS
     border: none;
     display: block;
     font-family: inherit;
+    font-size: inherit;
     height: 100%;
     width: 100%;
-}
-
-@media only screen and (min-width: 1765px) {
-    .samples .able-playlist {
-        flex-direction: column;
-    }
 }
 
 .samples .able-transcript-area {
