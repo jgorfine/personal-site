@@ -77,12 +77,31 @@ THEME
 
 @font-face {
     font-family: "Atkinson Hyperlegible";
+    font-style: italic;
+    font-weight: 400;
+    src: local("Atkinson Hyperlegible"),
+    url("fonts/atkinson-hyperlegible/italic-102a.woff2") format("woff2"),
+    url("fonts/atkinson-hyperlegible/italic-102.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Atkinson Hyperlegible";
     font-style: normal;
     font-weight: 700;
     src: local("Atkinson Hyperlegible"),
     url("fonts/atkinson-hyperlegible/bold-102a.woff2") format("woff2"),
     url("fonts/atkinson-hyperlegible/bold-102.woff") format("woff");
 }
+
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    font-style: italic;
+    font-weight: 700;
+    src: local("Atkinson Hyperlegible"),
+    url("fonts/atkinson-hyperlegible/bold-italic-102a.woff2") format("woff2"),
+    url("fonts/atkinson-hyperlegible/bold-italic-102.woff") format("woff");
+}
+
 
 :root {
     --theme-font-stack-primary: "Atkinson Hyperlegible", Verdana, sans-serif;
