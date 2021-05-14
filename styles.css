@@ -70,23 +70,23 @@ THEME
     --theme-font-stack-primary: Lato, Helvetica, Arial, sans-serif;
     --theme-font-stack-secondary: "Nixie One", serif;
 
-    --foo-font-size: 1.5em; /*24px*/
+    --foo-font-size: 1.5em;
 
     --body-font-family: var(--theme-font-stack-primary);
     --body-text-color: var(--theme-color-4);
 
-    --title-font-size: 2.25em; /*56px, 24px base*/
+    --title-font-size: 2.25em;
     --title-font-stack: var(--theme-font-stack-secondary);
     --title-font-weight: 100;
     --title-line-height: 1.1;
 
-    --subtitle-font-size: 1.5em; /*36px, 24px base*/
+    --subtitle-font-size: 1.25em;
     --subtitle-font-stack: inherit;
     --subtitle-font-weight: 400;
     --subtitle-line-height: 1.1;
 
-    --counter-font-size: 1em; /*24px, 24px base*/
-    --counter-diameter: 1.167em; /*28px, 24px base*/
+    --counter-font-size: 1em;
+    --counter-diameter: 1.167em;
 }
 
 .palette--professional {
@@ -199,7 +199,7 @@ p + p {
     white-space: nowrap;
 }
 
-.thing,
+.nav__icon,
 .li--with-counter::before {
     align-items: center;
     background-color: var(--counter-background-color);
@@ -218,7 +218,7 @@ p + p {
     width: 1.75em;
 }
 
-.thing svg {
+.nav__icon svg {
     height: 1em;
     width: 1em;
 }
@@ -322,19 +322,22 @@ HEADER ➝ INTRODUCTION
 
 /*
 ---------------------------------------------
-HEADER ➝ NAV
+NAV
 ---------------------------------------------
 */
 
-header nav {
+nav {
     display: block;
-    font-size: 20px;
-    margin: 2em 0 0 -0.5em;
+    font-size: clamp(20px, 1.5vw, 24px);
+    margin: 2em 0 0;
+    position: relative;
+    left: -0.6em;
     width: auto;
 }
 
 @media only screen and (min-width: 750px) {
-    header nav {
+    nav {
+        left: 0;
         margin: 2em auto 0;
         max-width: 960px;
         width: 100%;
@@ -342,14 +345,15 @@ header nav {
 }
 
 @media only screen and (min-width: 1200px) {
-    header nav {
-        margin: 5vh 0 0 -0.5em;
+    nav {
+        left: -0.5em;
+        margin: clamp(2em, 5vh, 60px) 0 0 0;
         max-width: none;
         width: auto;
     }
 }
 
-header ul {
+nav ul {
     display: flex;
     flex-direction: column;
     gap: 0.75em;
@@ -360,47 +364,47 @@ header ul {
 }
 
 @media only screen and (min-width: 750px) {
-    header ul {
+    nav ul {
         flex-direction: row;
         gap: 0 2.5vw;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    header ul {
+    nav ul {
         flex-direction: column;
         gap: 0.75em;
     }
 }
 
-header ul li {
+nav ul li {
     align-items: center;
     display: flex;
     gap: 0.5em;
 }
 
-header .thing {
+.nav__icon {
     display: flex;
 }
 
 @media only screen and (min-width: 750px) {
-    header .thing {
+    .nav__icon {
         display: none;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    header .thing {
+    .nav__icon {
         display: flex;
     }
 }
 
-header .nav__about svg {
+#nav__about svg {
     height: 0.75em;
     width: 0.75em;
 }
 
-header .nav__presentations svg {
+#nav__presentations svg {
     height: 0.875em;
     margin-top: 3px;
     width: 0.875em;
@@ -420,15 +424,9 @@ main {
     margin: 3em 0 6em;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1765px) {
     main {
         font-size: 1rem;
-    }
-}
-
-@media only screen and (min-width: 1800px) {
-    main {
-        font-size: 1.125rem;
     }
 }
 
@@ -478,7 +476,7 @@ MAIN ➝ SAMPLES LISTS
     }
 }
 
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 1765px) {
     .samples > li {
         /*grid-gap: 2em 0;*/
         grid-template-columns: auto 3fr minmax(300px, 1fr);
@@ -568,7 +566,7 @@ MAIN ➝ SAMPLES LISTS
     }
 }
 
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 1765px) {
     .samples .able-wrapper,
     .samples a[tabindex="-1"] {
         grid-column: 2 / 3;
@@ -601,7 +599,7 @@ MAIN ➝ SAMPLES LISTS
     width: 100%;
 }
 
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 1765px) {
     .samples .able-playlist {
         flex-direction: column;
     }
