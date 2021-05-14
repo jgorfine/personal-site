@@ -190,7 +190,7 @@ p + p {
     width: 0.75em;
 }
 
-.link--icon,
+.thing,
 .li--with-counter::before {
     align-items: center;
     background-color: var(--counter-background-color);
@@ -198,28 +198,18 @@ p + p {
     color: var(--counter-text-color);
     content: counter(custom-counter);
     display: flex;
+    fill: currentColor;
     flex: none;
-    font-size: 1.25em;
-    height: 2em;
+    font-size: 1.125em;
+    height: 1.75em;
     justify-content: center;
     line-height: 2;
     outline: 1px solid transparent;
     position: relative;
-    width: 2em;
+    width: 1.75em;
 }
 
-.link--icon:hover::after,
-.link--icon:focus::after {
-    bottom: -2em;
-    content: attr(data-whatever);
-    display: block;
-    font-size: 0.75em;
-    left: -0.5em;
-    position: absolute;
-    text-align: center;
-}
-
-.link--icon svg {
+.thing svg {
     height: 1em;
     width: 1em;
 }
@@ -265,7 +255,6 @@ header {
     color: var(--header-text-color);
     grid-area: header;
     padding: 1em 0;
-    text-align: center;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -320,7 +309,7 @@ header nav {
     /*background-color: var(--nav-background-color);*/
     display: inline-block;
     font-size: 20px;
-    margin: 10vh auto 0;
+    margin: 5vh auto 0;
 }
 
 header ul {
@@ -329,30 +318,25 @@ header ul {
     padding: 0;
 }
 
-header .whizz {
+header ul li {
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1em 1.5em;
-    justify-content: center;
+    gap: 0 0.5em;
 }
 
-@media only screen and (min-width: 1200px) {
-    header .whizz {
-        flex-direction: column;
-        gap: 2em;
-    }
+header ul li + li {
+    margin-top: 0.75em;
 }
 
-header .whizz > li:last-child {
-    flex: 1 1 100%;
+header .nav__about svg {
+    height: 0.75em;
+    width: 0.75em;
 }
 
-header .profiles {
-    align-items: center;
-    display: flex;
-    gap: 1em;
-    justify-content: center;
+header .nav__presentations svg {
+    height: 0.875em;
+    margin-top: 3px;
+    width: 0.875em;
 }
 
 
