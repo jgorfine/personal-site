@@ -583,7 +583,11 @@ MAIN ➝ SAMPLES LISTS
 }
 
 .samples .able-playlist button {
+    appearance: none;
+    background-color: transparent;
+    border: none;
     display: block;
+    font-family: inherit;
     height: 100%;
     width: 100%;
 }
