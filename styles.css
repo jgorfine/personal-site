@@ -46,6 +46,7 @@ body {
     width: 100%;
 }
 
+dl,
 q,
 blockquote {
     margin: 0;
@@ -55,6 +56,11 @@ h1, h2, h3,
 h4, h5, h6, p {
     font-weight: 400;
     margin: 0;
+}
+
+img {
+    border: none;
+    display: block;
 }
 
 
@@ -105,22 +111,17 @@ THEME
 :root {
     --theme-font-stack-primary: "Atkinson Hyperlegible", Verdana, sans-serif;
     --theme-font-stack-secondary: "Nixie One", serif;
-
     --base-font-size: 1.25em;
-
     --body-font-family: var(--theme-font-stack-primary);
     --body-text-color: var(--theme-color-4);
-
     --title-font-size: 2.25em;
     --title-font-stack: var(--theme-font-stack-secondary);
     --title-font-weight: 100;
     --title-line-height: 1.1;
-
     --subtitle-font-size: 1.5em;
     --subtitle-font-stack: inherit;
     --subtitle-font-weight: 400;
     --subtitle-line-height: 1.1;
-
     --counter-font-size: 1em;
     --counter-diameter: 1.167em;
 }
@@ -145,7 +146,6 @@ THEME
     --theme-color-3: #1f4068; /*rgb(31, 64, 104)*/
     --theme-color-4: #1b1c25; /*rgb(27, 28, 37)*/
     --theme-color-5: #fff;    /*rgba(255, 255, 255)*/
-
     --body-background-color: var(--theme-color-5);
     --header-background-color: var(--theme-color-3);
     --header-text-color: var(--theme-color-1);
@@ -293,10 +293,6 @@ LAYOUT
 
 @media only screen and (min-width: 1200px) {
     .test {
-        /*display: grid;*/
-        /*grid-template-areas:*/
-        /*    "header nav nav nav nav nav nav"*/
-        /*    "header main main main main main main";*/
         align-items: stretch;
         display: flex;
     }
@@ -515,23 +511,10 @@ MAIN ➝ SAMPLES LISTS
 }
 
 .samples > li {
+    align-items: flex-start;
     counter-increment: custom-counter;
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-@media only screen and (min-width: 550px) {
-    .samples > li {
-        grid-template-columns: auto 1fr;
-    }
-}
-
-@media only screen and (min-width: 2000px) {
-    .samples > li {
-        /*grid-gap: 2em 0;*/
-        grid-template-columns: auto 3fr minmax(300px, 1fr);
-    }
-
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .samples > li + li {
@@ -539,6 +522,7 @@ MAIN ➝ SAMPLES LISTS
 }
 
 .samples > li::before {
+    flex: none;
     margin-bottom: 0.5em;
     padding-top: 0.2em;
 }
@@ -550,128 +534,18 @@ MAIN ➝ SAMPLES LISTS
     }
 }
 
-.samples .able-wrapper,
-.samples a[tabindex="-1"],
-.samples .able-playlist,
-.samples .able-transcript-area {
-    grid-column: 1 / 2;
+.samples .abcdefg {
+    flex: 2 2 100%;
 }
 
-.samples .able-wrapper,
-.samples a[tabindex="-1"] {
-    grid-row: 4;
-}
-
-.samples .able-playlist,
-.samples .able-transcript-area {
-    grid-row: 5;
-}
-
-@media only screen and (min-width: 550px) {
-    .samples .able-wrapper,
-    .samples a[tabindex="-1"],
-    .samples .able-playlist,
-    .samples .able-transcript-area {
-        grid-column: 1 / 4;
-    }
-
-    .samples .able-wrapper,
-    .samples a[tabindex="-1"] {
-        grid-row: 3;
-    }
-
-    .samples .able-playlist,
-    .samples .able-transcript-area {
-        grid-row: 4;
-    }
-}
-
-@media only screen and (min-width: 1000px) {
-    .samples .able-wrapper,
-    .samples a[tabindex="-1"],
-    .samples .able-playlist,
-    .samples .able-transcript-area {
-        grid-column: 2 / 4;
-    }
-
-    .samples .able-wrapper,
-    .samples a[tabindex="-1"] {
-        grid-row: 2;
-    }
-
-    .samples .able-playlist,
-    .samples .able-transcript-area {
-        grid-row: 3;
-    }
-}
-
-@media only screen and (min-width: 2000px) {
-    .samples .able-wrapper,
-    .samples a[tabindex="-1"] {
-        grid-column: 2 / 3;
-    }
-
-    .samples .able-playlist,
-    .samples .able-transcript-area {
-        grid-column: 3 / 4;
-        grid-row: 2;
-    }
-}
-
-.samples .able-playlist {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-@media only screen and (min-width: 2000px) {
-    .samples .able-playlist {
-        align-items: stretch;
-        display: flex;
-        flex-direction: column;
-        justify-content: stretch;
-    }
-}
-
-.samples .able-playlist li {
-    display: block;
-    flex: 1 1 auto;
-}
-
-.samples .able-playlist button {
-    appearance: none;
-    background-color: transparent;
-    border: none;
-    display: block;
-    font-family: inherit;
-    font-size: inherit;
-    height: 100%;
-    width: 100%;
-}
-
-.samples .able-transcript-area {
-    height: auto;
-}
-
-.samples img {
+.samples .foo img {
     height: auto;
     display: block;
     width: 100%;
 }
 
 .samples dl {
-    grid-column: 1 / 2;
-    grid-row: 2;
-    margin: 0 0 1em;
     padding-top: 0.125em;
-}
-
-@media only screen and (min-width: 550px) {
-    .samples dl {
-        grid-column: 2 / 4;
-        grid-row: 1;
-    }
 }
 
 .samples .dl__pair + .dl__pair {
@@ -686,12 +560,6 @@ MAIN ➝ SAMPLES LISTS
 
 .samples dt {
     font-weight: 700;
-}
-
-.samples .foobar {
-    grid-column: 2 / 3;
-    grid-row: 3;
-    margin-top: 1em;
 }
 
 
@@ -711,7 +579,7 @@ MAIN ➝ ABLEPLAYER
     --ableplayer-seekbar-loaded-background-color: var(--theme-color-1);
     --ableplayer-seekbar-played-background-color: var(--theme-color-2);
     --ableplayer-volume-track-on-background-color: var(--theme-color-1);
-    --ableplayer-status-bar-color: #fff;
+    --ableplayer-status-bar-color: var(--theme-color-5);
     --ableplayer-transcript-area-background-color: var(--theme-color-1);
 }
 
@@ -767,11 +635,71 @@ MAIN ➝ ABLEPLAYER
 
 .able-playlist {
     background-color: var(--theme-color-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (min-width: 2000px) {
+    .able-playlist {
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+    }
+}
+
+.able-playlist li {
+    display: block;
+    flex: 1 1 auto;
+}
+
+/*.able-playlist li + li {*/
+/*    margin-top: 1em;*/
+/*}*/
+
+.able-playlist button {
+    align-items: center;
+    appearance: none;
+    background-color: pink;
+    border: none;
+    display: flex;
+    font-family: inherit;
+    font-size: inherit;
+    justify-content: flex-start;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.able-playlist button img {
+    flex: 0 1 auto;
+    width: 33vw
+}
+
+.able-playlist .helloworld {
+    display: block;
+    flex: 2 2 200px;
+    padding: 1em;
+}
+
+.able-current .helloworld::before {
+    content: "Currently Playing: ";
+}
+
+.able-current + li .helloworld::before {
+    content: "Next Up: ";
 }
 
 .able-transcript-area,
 .able-transcript {
     background-color: var(--theme-color-1);
+}
+
+.able-transcript-area {
+    height: auto;
 }
 
 .able-transcript {
