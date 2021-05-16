@@ -154,6 +154,7 @@ THEME
     --title-color: var(--theme-color-2);
     --subtitle-color: inherit;
     --counter-background-color: var(--theme-color-2);
+    --counter-diameter: 1.75em;
     --counter-text-color: var(--theme-color-1);
 }
 
@@ -264,12 +265,12 @@ p + p {
     flex: none;
     flex-direction: column;
     font-size: 1em;
-    height: 1.75em;
+    height: var(--counter-diameter);
     justify-content: center;
     line-height: 2;
     outline: 1px solid transparent;
     position: relative;
-    width: 1.75em;
+    width: var(--counter-diameter);
 }
 
 .nav__icon svg {
@@ -488,14 +489,14 @@ article + article {
 
 article .container {
     margin: 0 auto;
-    width: 88%;
+    width: 92% /*88%*/;
 }
 
-@media only screen and (min-width: 1200px) {
-    article .container {
-        padding-right: 5%;
-    }
-}
+/*@media only screen and (min-width: 1200px) {*/
+/*    article .container {*/
+/*        padding-right: 5%;*/
+/*    }*/
+/*}*/
 
 /*
 ---------------------------------------------
@@ -513,8 +514,37 @@ MAIN ➝ SAMPLES LISTS
 .samples > li {
     align-items: flex-start;
     counter-increment: custom-counter;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-areas:
+        "counter"
+        "description"
+        "feature"
+        "extra"
+        "link";
+    grid-template-columns: 1fr;
+}
+
+@media only screen and (min-width: 700px) {
+    .samples > li {
+        grid-template-areas:
+            "counter description ."
+            ". feature ."
+            ". extra ."
+            ". link .";
+        grid-template-columns: var(--counter-diameter) 1fr calc(var(--counter-diameter) / 2);
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .samples > li {
+        align-items: stretch;
+        grid-gap: 1em 0;
+        grid-template-areas:
+            "counter . description description ."
+            ". . feature extra ."
+            ". . link . .";
+        grid-template-columns: var(--counter-diameter) 0.75em 3fr minmax(500px, 1fr) var(--counter-diameter);
+    }
 }
 
 .samples > li + li {
@@ -522,20 +552,20 @@ MAIN ➝ SAMPLES LISTS
 }
 
 .samples > li::before {
-    flex: none;
-    margin-bottom: 0.5em;
+    grid-area: counter;
+    /*margin-bottom: 0.5em;*/
     padding-top: 0.2em;
 }
 
-@media only screen and (min-width: 550px) {
-    .samples > li::before {
-        margin-bottom: 0;
-        margin-right: 1em;
-    }
-}
+/*@media only screen and (min-width: 550px) {*/
+/*    .samples > li::before {*/
+/*        margin-bottom: 0;*/
+/*        margin-right: 1em;*/
+/*    }*/
+/*}*/
 
 .samples .abcdefg {
-    flex: 2 2 100%;
+    flex: 2 2 500px;
 }
 
 .samples .foo img {
@@ -544,7 +574,22 @@ MAIN ➝ SAMPLES LISTS
     width: 100%;
 }
 
+.samples .able-wrapper,
+.samples .foo {
+    grid-area: feature;
+}
+
+.samples .able-playlist,
+.samples .able-transcript {
+    grid-area: extra;
+}
+
+.samples .bar {
+    grid-area: link;
+}
+
 .samples dl {
+    grid-area: description;
     padding-top: 0.125em;
 }
 
@@ -676,7 +721,7 @@ MAIN ➝ ABLEPLAYER
 
 .able-playlist button img {
     flex: 0 1 auto;
-    width: 33vw
+    width: 9vw /*33vw*/;
 }
 
 .able-playlist .helloworld {
