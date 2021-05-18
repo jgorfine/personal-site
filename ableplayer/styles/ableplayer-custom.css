@@ -34,20 +34,16 @@
 	.able = 5000
 */
 .able-wrapper {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  width: 100%;
   height: auto;
-  box-sizing: content-box !important;
+  margin: 0;
+  position: relative;
+  padding: 0;
   text-align: left;
+  width: 100%;
 }
 .able {
   position: relative;
-  /*margin: 1em 0;*/
   width: 100%; /* will be changed dynamically as player is contructed */
-  /*background-color: #000;*/
-  /*box-shadow: 0px 0px 16px #262626;*/
   z-index: 5000;
 }
 .able-column-left {
@@ -58,15 +54,10 @@
 }
 .able .able-vidcap-container {
   background-color: black;
-  /* height: 360px; */
   left: 0;
   margin: 0;
   position: relative;
   top: 0;
-}
-.able-player {
-  /*font-family: Arial, Helvetica, sans-serif;*/
-  /*background-color: #262626; !* background color of player (appears on top & bottom) *!*/
 }
 .able-offscreen {
   position: absolute;
@@ -84,7 +75,6 @@
 }
 .able-controller {
   position: relative;
-  /*border-bottom: 1px solid #4c4c4c;*/
   /*background-color: #464646; !* background color of controller bar *!*/
   min-height: 2.375rem /*38px*/; /* height of button (20px) + 4px border + 4px padding */
   padding: 0;
@@ -207,7 +197,6 @@
   position: relative;
   height: 0.5em;
   border: 1px solid;
-  /*background-color: #000000;*/
   margin: 0 0.188rem /*3px*/;
   border-style: solid;
   border-width: 2px;
@@ -219,7 +208,6 @@
   left: 0;
   top: 0;
   height: 0.5em;
-  /*background-color: #464646;*/
   z-index: 5100;
 }
 .able-seekbar-played {
@@ -227,16 +215,14 @@
   position: absolute;
   left: 0;
   top: 0;
-  height: 0.5em;
-  /*background-color: #DADADA;*/
+  height: 100%;
   z-index: 5200;
 }
 .able-seekbar-head {
   display: inline-block;
   position: relative;
   left: 0;
-  top: -0.25em;
-  /*background-color: #FDFDFD;*/
+  top: -0.2em;
   width: 0.8em;
   height: 0.8em;
   border: 1px solid;
@@ -299,29 +285,28 @@
   Status Bar
 */
 .able-status-bar {
-  height: 1.5em;
-  min-height: 1.5em;
-  /*color: #CCC;*/
-  font-size: 1em;
+  align-items: baseline;
   background-color: transparent;
-  padding: 0.5em 0.5em 0.25em;
+  display: flex;
+  font-size: 1em;
+  justify-content: space-between;
+  padding: 0.5em;
 }
 .able-status-bar span.able-timer {
   /* contains both span.elapsedTime and span.duration */
+  flex: none;
   font-variant-numeric: tabular-nums;
   text-align: left;
-  float: left;
-  width: 32%;
+  width: 30%;
 }
 .able-status-bar span.able-speed {
-  float: left;
-  width: 33%;
+  flex: 2 2 auto;
   text-align: center;
 }
 .able-status {
-  float: right;
-  width: 32%;
-  text-align :right;
+  flex: none;
+  text-align: right;
+  width: 30%;
 }
 
 /*

@@ -15,6 +15,10 @@ UTILITIES
     width: 1px;
 }
 
+.nowrap {
+    white-space: nowrap;
+}
+
 
 
 /*
@@ -126,11 +130,11 @@ THEME
     --counter-diameter: 1.167em;
 }
 
-/*@media only screen and (min-width: 750px) {*/
-/*    :root {*/
-/*        --base-font-size: 1.5em;*/
-/*    }*/
-/*}*/
+@media only screen and (min-width: 750px) {
+    :root {
+        --base-font-size: 1.5em;
+    }
+}
 
 @media only screen and (min-width: 1600px) {
     :root {
@@ -146,16 +150,31 @@ THEME
     --theme-color-3: #1f4068; /*rgb(31, 64, 104)*/
     --theme-color-4: #1b1c25; /*rgb(27, 28, 37)*/
     --theme-color-5: #fff;    /*rgba(255, 255, 255)*/
-    --body-background-color: var(--theme-color-5);
-    --header-background-color: var(--theme-color-3);
+    --body-bg-color: var(--theme-color-5);
+    --header-bg-color: var(--theme-color-3);
     --header-text-color: var(--theme-color-1);
-    --nav-background-color: var(--theme-color-2);
+    --nav-bg-color: var(--theme-color-2);
     --nav-color: var(--theme-color-5);
     --title-color: var(--theme-color-2);
     --subtitle-color: inherit;
-    --counter-background-color: var(--theme-color-2);
+    --counter-bg-color: var(--theme-color-2);
     --counter-diameter: 1.75em;
     --counter-text-color: var(--theme-color-1);
+
+    --player-bg-color: var(--theme-color-3);
+    --controller-bg-color: var(--theme-color-4);
+    --controller-color: var(--theme-color-1);
+    --big-play-button-color: var(--theme-color-1);
+    --seekbar-bg-color: var(--theme-color-4);
+    --seekbar-head-bg-color: var(--theme-color-5);
+    --seekbar-loaded-bg-color: var(--theme-color-1);
+    --seekbar-played-bg-color: var(--theme-color-2);
+    --volume-track-on-bg-color: var(--theme-color-1);
+    --status-bar-color: var(--theme-color-5);
+    --transcript-area-bg-color: var(--theme-color-2);
+    --transcript-area-color: var(--theme-color-5);
+    --playlist-bg-color: var(--theme-color-2);
+    --playlist-color: var(--theme-color-5);
 }
 
 
@@ -256,7 +275,7 @@ p + p {
 .nav__icon,
 .li--with-counter::before {
     align-items: center;
-    background-color: var(--counter-background-color);
+    background-color: var(--counter-bg-color);
     border-radius: 50%;
     color: var(--counter-text-color);
     content: counter(custom-counter);
@@ -287,7 +306,7 @@ LAYOUT
 */
 
 .test {
-    background-color: var(--body-background-color);
+    background-color: var(--body-bg-color);
     color: var(--body-text-color);
     font-family: var(--body-font-family);
 }
@@ -308,7 +327,7 @@ HEADER
 */
 
 header {
-    background-color: var(--header-background-color);
+    background-color: var(--header-bg-color);
     color: var(--header-text-color);
     flex: none;
     padding: 1em 4% 3em;
@@ -543,7 +562,7 @@ MAIN ➝ SAMPLES LISTS
             "counter . description description ."
             ". . feature extra ."
             ". . link . .";
-        grid-template-columns: var(--counter-diameter) 0.75em 3fr minmax(500px, 1fr) var(--counter-diameter);
+        grid-template-columns: var(--counter-diameter) 0.75em 3fr minmax(475px, 1fr) var(--counter-diameter);
     }
 }
 
@@ -575,6 +594,13 @@ MAIN ➝ SAMPLES LISTS
 }
 
 .samples .able-wrapper,
+.samples .foo,
+.samples .able-playlist,
+.samples .able-transcript {
+    border: 1px solid var(--theme-color-4);
+}
+
+.samples .able-wrapper,
 .samples .foo {
     grid-area: feature;
 }
@@ -582,6 +608,13 @@ MAIN ➝ SAMPLES LISTS
 .samples .able-playlist,
 .samples .able-transcript {
     grid-area: extra;
+}
+
+@media only screen and (min-width: 2000px) {
+    .samples .able-playlist,
+    .samples .able-transcript {
+        border-left: 0;
+    }
 }
 
 .samples .bar {
@@ -620,72 +653,55 @@ MAIN ➝ ABLEPLAYER
 ---------------------------------------------
 */
 
-.able-wrapper {
-    --ableplayer-player-background-color: var(--theme-color-3);
-    --ableplayer-controller-background-color: var(--theme-color-4);
-    --ableplayer-controller-color: var(--theme-color-1);
-    --ableplayer-big-play-button-color: var(--theme-color-1);
-    --ableplayer-seekbar-background-color: var(--theme-color-4);
-    --ableplayer-seekbar-loaded-background-color: var(--theme-color-1);
-    --ableplayer-seekbar-played-background-color: var(--theme-color-2);
-    --ableplayer-volume-track-on-background-color: var(--theme-color-1);
-    --ableplayer-status-bar-color: var(--theme-color-5);
-    --ableplayer-transcript-area-background-color: var(--theme-color-1);
-}
-
 .able,
 .able-player {
-    background-color: var(--ableplayer-player-background-color);
+    background-color: var(--player-bg-color);
 }
 
 .able-controller {
-    background-color: var(--ableplayer-controller-background-color);
+    background-color: var(--controller-bg-color);
 }
 
 .able-big-play-button {
-    color: var(--ableplayer-big-play-button-color);
+    color: var(--big-play-button-color);
 }
 
 .able-seekbar {
-    background-color: var(--ableplayer-seekbar-background-color);
+    background-color: var(--seekbar-bg-color);
 }
 
 .able-seekbar-loaded {
-    background-color: var(--ableplayer-seekbar-loaded-background-color);
+    background-color: var(--seekbar-loaded-bg-color);
     opacity: 0.5;
 }
 
 .able-seekbar-played {
-    background-color: var(--ableplayer-seekbar-played-background-color);
+    background-color: var(--seekbar-played-bg-color);
 }
 
 .able-seekbar-head {
-    background-color: #fff;
+    background-color: var(--seekbar-head-bg-color);
 }
 
 .able-volume-slider {
-    background-color: var(--ableplayer-controller-background-color);
+    background-color: var(--controller-bg-color);
 }
 
 .able-volume-track {
-    background-color: var(--ableplayer-controller-background-color);
+    background-color: var(--controller-bg-color);
 }
 
 .able-volume-track.able-volume-track-on {
-    background-color: var(--ableplayer-volume-track-on-background-color);
-}
-
-.able-volume-head {
-
+    background-color: var(--volume-track-on-bg-color);
 }
 
 .able-status-bar {
-    color: var(--ableplayer-status-bar-color);
+    color: var(--status-bar-color);
 }
 
 .able-playlist {
-    background-color: var(--theme-color-1);
-    /*border: 1px solid var(--theme-color-3);*/
+    background-color: var(--playlist-bg-color);
+    color: var(--playlist-color);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -703,19 +719,19 @@ MAIN ➝ ABLEPLAYER
 .able-playlist li {
     display: block;
     flex: 1 1 auto;
-    font-size: 0.875em;
+    /*font-size: 0.875em;*/
 }
 
 .able-playlist li + li {
-    border-top: 1px solid var(--theme-color-3);
+    border-top: 1px solid var(--theme-color-4);
 }
 
-.able-playlist button {
-    align-items: flex-start;
+.able-playlist-button {
+    align-items: center;
     appearance: none;
     background-color: transparent;
-    /*background-color: pink;*/
     border: none;
+    color: inherit;
     display: flex;
     font-family: inherit;
     font-size: inherit;
@@ -723,34 +739,46 @@ MAIN ➝ ABLEPLAYER
     height: 100%;
     margin: 0;
     padding: 0;
+    position: relative;
     text-align: left;
     width: 100%;
 }
 
-.able-playlist button img {
-    flex: 0 1 auto;
-    width: clamp(100px, 33vw, 350px);
-}
-
 @media only screen and (min-width: 2000px) {
-    .able-playlist button img {
-        width: 9vw;
+    .able-playlist button {
     }
 }
 
-.able-playlist .helloworld {
+.able-playlist-button img {
     display: block;
-    flex: 2 2 200px;
-    padding: 3em 1em 0;
+    flex: 0 1 auto;
+    width: clamp(155px, 33vw, 475px);
 }
 
-.able-current .helloworld::before {
-    content: "Currently Playing: ";
+@media only screen and (min-width: 2000px) {
+    .able-playlist-button img {
+        display: none;
+    }
+}
+
+.able-playlist-button-cta {
+    display: block;
+    flex: 2 2 200px;
+    font-size: 0.875em;
+    padding: 0 1em;
+}
+
+.able-current .able-playlist-button-cta::after {
+    content: "Currently Selected";
+    display: block;
+    font-style: italic;
+    margin-top: 0.5em;
 }
 
 .able-transcript-area,
 .able-transcript {
-    background-color: var(--theme-color-1);
+    background-color: var(--transcript-area-bg-color);
+    color: var(--transcript-area-color);
 }
 
 .able-transcript-area {
